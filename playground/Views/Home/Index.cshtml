@@ -1,0 +1,33 @@
+﻿@model UserToLoginDto;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="app-center">
+    <div>
+        <h3 class="h3-underline">README</h3>
+        Sample project that has authorization and authentication implemented out of box.
+        JWT token is used to check auth, after login token assigned and stored inside cookies under "X-Access-Token" key.
+        <br />
+        <i><b>First registered user with Email 'admin@localhost' will get 'Administrator' role assigned.</b></i>
+        <br />
+        All unathorized requests will be redirected to "/user/login".
+        <br />
+        WebApp has SQLite configured (can be changed to any supported provider).
+        <br />
+        To keep code clean all custom configuration from StartUp.cs were moved to the
+        helper classes under Extentions folder.
+        <br />
+        <h3 class="h3-underline">To test</h3>
+        Page "/user/getAllUsers" requred authorization with role 'User' you can try to access it without token.
+        This request must be redirecred to the login page automatically.
+        If you have 'User' role you then can only read the list, if you have an 'Administrator' role you can manipulate user.
+        <br />
+        <h3 class="h3-underline">Pages</h3>
+        @{
+            await Html.RenderPartialAsync("_availablePages");
+        }
+    </div>
+    
+</div>
+

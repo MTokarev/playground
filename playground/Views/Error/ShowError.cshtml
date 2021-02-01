@@ -1,0 +1,16 @@
+﻿@model UserToLoginDto;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="app-center">
+    <div>
+        <h3 class="h3-underline">Something went wrong...</h3>
+        <text>Please use following pages:</text>
+        @{ 
+            await Html.RenderPartialAsync("_availablePages");
+        }
+    </div>
+
+</div>
+

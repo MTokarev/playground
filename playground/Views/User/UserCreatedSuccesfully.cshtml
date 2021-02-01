@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "User Page";
+}
+
+<div class="app-center">
+    <div>
+        <h1 class="h1-center h1-green">User has been created succesfully</h1>
+        <h3 class="h3-underline">Pages</h3>
+        @{
+            await Html.RenderPartialAsync("_availablePages");
+        }
+    </div>
+
+</div>
+

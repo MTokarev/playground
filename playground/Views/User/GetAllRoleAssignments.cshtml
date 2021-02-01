@@ -1,0 +1,30 @@
+﻿@model AllRolesViewModel;
+@{
+    ViewData["Title"] = "User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="h1-center">Role assignments Table</h1>
+<h3 class="h3-underline h3-center">(Authorization required "Administrator" role)</h3>
+<div class="container">
+    <table class="table-center">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>User Id</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Roles)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.EUserId</td>
+                    <td>@item.Role</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

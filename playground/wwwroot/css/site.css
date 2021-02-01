@@ -1,0 +1,200 @@
+﻿* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins", sans-serif;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #646d6d;
+}
+
+table {
+    border-collapse: collapse;
+    font-family: inherit;
+    width: 100%;
+    padding: 2rem;
+}
+
+body {
+    background: linear-gradient(to left, #DCE1E3, #b9bec0);
+}
+
+.h1-center {
+    text-align: center;
+}
+
+.h3-center {
+    text-align: center;
+}
+
+.h1-green {
+    color: seagreen;
+}
+
+.h3-underline {
+    border-bottom: 1px solid #bebebe;
+}
+
+.text-danger {
+    color: orangered;
+    text-align: center;
+}
+
+.nav-flex {
+    display: flex;
+    align-items: center;
+    position: center;
+}
+
+.container {
+    margin: 5rem;
+    padding-bottom: 100px;
+    min-height: 100%;
+}
+
+.container-center {
+    margin: auto;
+}
+
+.logo {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.links {
+    text-decoration: none;
+    font-weight: 700;
+    transition: all ease-in-out 0.3s;
+}
+
+.links:hover {
+    color: #7097a7;
+    font-weight: 900;
+}
+
+.logo-img {
+    margin: 10px;
+}
+
+.app-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main-view {
+    height: 50rem;
+    display: flex
+}
+
+/*Login form*/
+
+.login-form {
+    position: relative;
+    max-width: 30rem;
+    max-height: 40rem;
+    margin: 2rem auto;
+    padding: 60px;
+    border-radius: 25px;
+    background-color: #d6dcdf;
+    box-shadow: 3px 3px 2px #bebebe;
+    display: grid;
+    justify-content: center;
+    height: 100%;
+}
+
+.login-button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 0;
+    transition: all ease-in-out 0.2s;
+}
+
+.login-button:hover {
+    background-color: #429746;
+    cursor: pointer;
+}
+
+.login-input {
+    width: 15rem;
+    border: none;
+    border-radius: 15px;
+    padding: 5px;
+    margin-bottom: 5px;
+    transition: all ease-in-out 0.2s;
+}
+
+.password-input {
+    width: 15rem;
+    border: none;
+    border-radius: 15px;
+    padding: 5px;
+    transition: all ease-in-out 0.2s;
+}
+
+footer {
+    padding: 5px;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+/*Modal window*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    border-radius: 15px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*Action classes*/
+
+.login-input:focus, .password-input:focus, button:focus {
+    outline: none;
+    box-shadow: 3px 3px 2px #bebebe;
+}

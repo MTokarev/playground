@@ -1,0 +1,33 @@
+﻿@model AllUsersViewModel;
+@{
+    ViewData["Title"] = "User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="h1-center">Users Table (Authorization required)</h1>
+<div class="container">
+    <table class="table-center">
+        <thead>
+            <tr>
+                <th>User Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Users)
+            {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Email</td>
+                <td><a class="links" asp-controller="User" asp-action="DeleteUser" asp-route-userId=@item.id>Remove</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

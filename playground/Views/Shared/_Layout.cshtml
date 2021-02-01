@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Playground
+    </title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="nav-flex">
+            <a href="/">
+                <img class="logo-img" src="/img/logo.png" alt="logo" />
+            </a>
+            <a class="logo" asp-area="" asp-controller="Home" asp-action="Index">
+                @{if (ViewData["loggedUserName"] != null)
+                    { <text>Hi @ViewData["loggedUserName"].ToString()</text>;
+                }
+                else
+                { <text>Playground</text>;
+            } }
+            </a>
+        </nav>
+    </header>
+
+    @* This is modal windows that would be available to popup on every page in case viewData has a 'modalMessage' to show*@
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modalMessage">@{if (ViewData["modalMessage"] != null){ <text>@ViewData["modalMessage"]</text>;}}</p>
+        </div>
+
+    </div>
+
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <div>
+            &copy;  @DateTime.Now.Year - playground - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

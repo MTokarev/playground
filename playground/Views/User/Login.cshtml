@@ -1,0 +1,17 @@
+﻿@model UserToLoginDto;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="app-center">
+    <div>
+        <h1 class="h1-center">Welcome</h1>
+        <form class="login-form" method="post" asp-controller="User" asp-action="Login">
+            <input class="login-input" placeholder="E-Mail Address" asp-for="Email" type="text">
+            <input class="password-input" placeholder="Password" asp-for="Password" type="password">
+            <button class="login-button">Login</button>
+        </form>
+    </div>
+
+</div>
+

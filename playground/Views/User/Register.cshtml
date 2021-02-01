@@ -1,0 +1,18 @@
+﻿@model UserToRegisterDto;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="app-center">
+    <div>
+        <h1 class="h1-center">Welcome</h1>
+        <form class="login-form" method="post" asp-controller="User" asp-action="Register">
+            <input class="login-input" placeholder="First name" asp-for=FirstName type="text">
+            <input class="login-input" placeholder="Last name" asp-for=LastName type="text">
+            <input class="login-input" placeholder="E-mail" asp-for=Email type="text">
+            <input class="password-input" placeholder="Password" asp-for="Password" type="password">
+            <button class="login-button">Register</button>
+        </form>
+    </div>
+
+</div>
