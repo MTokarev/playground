@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using playground.DTOs;
 using playground.Entities;
 using playground.Interfaces;
@@ -13,16 +13,18 @@ namespace playground.Controllers
 {
     public class UserController : Controller
     {
-        private IUserService _userService;
-        private ITokenService _tokenService;
-        private ICookiesService _cookiesService;
+        private readonly IUserService _userService;
+        private readonly ITokenService _tokenService;
+        private readonly ICookiesService _cookiesService;
+        private readonly ILogger<UserController> _logger;
 
         public UserController(IUserService userService, ITokenService tokenService
-            , ICookiesService cookiesService)
+            , ICookiesService cookiesService, ILogger<UserController> logger)
         {
             _userService = userService;
             _tokenService = tokenService;
             _cookiesService = cookiesService;
+            _logger = logger;
         }
 
         public IActionResult Index()
@@ -62,9 +64,9 @@ namespace playground.Controllers
             return View(allRoles);
         }
 
-        [Authorize(Roles= nameof(ERoles.Administrator))]
+        [Authorize(Roles = nameof(ERoles.Administrator))]
         [HttpGet]
-        public async Task<IActionResult> DeleteUser([FromQuery]int userId)
+        public async Task<IActionResult> DeleteUser([FromQuery] int userId)
         {
             await _userService.DeleteUserAsync(userId);
             return Redirect("GetAllUsers");
@@ -93,16 +95,17 @@ namespace playground.Controllers
         }
 
         [HttpGet]
-        public IActionResult Login([FromQuery]int statusCode)
+        public IActionResult Login([FromQuery] int statusCode)
         {
-            if(statusCode == 401)
+            if (statusCode == 401)
             {
                 ViewData["modalMessage"] = "ERROR: Unauthorized access";
-            }else if(statusCode == 403)
+            }
+            else if (statusCode == 403)
             {
                 ViewData["modalMessage"] = "ERROR: User role is not enough to perform this operation";
             }
-            
+
             return View();
         }
 
