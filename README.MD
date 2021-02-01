@@ -101,8 +101,8 @@ Shared \_Layout.cshtml has a modal window that hidden. If `ViewData["modalMessag
 
 ### Logging
 
-`Serilog` package is used to log events bot to the console and file.
-Configuration is in `Program.cs`, log will be created daily in `Log` folder with prefix `log{Data}.txt`. By default 31 files will be retained.
+`Serilog` package is used to log events both to the console and file.
+Configuration is in `Program.cs`, log will be created daily in `Log` folder with prefix `log{Date}.txt`. By default 31 files will be retained.
 Configuration could be found in `appsettings.json`
 
 ### Bottom line
