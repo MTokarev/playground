@@ -2,22 +2,23 @@
 
    1.1 [Demo](#Small-Demo)
 
-2. [What you should know](#What-you-should-know)
-3. [What is inside](#What-is-inside)
+2. [What is inside](#What-is-inside)
 
-   3.1 [Where is service configuration](#Where-is-service-configuration)
+   2.1 [Where is service configuration](#Where-is-service-configuration)
 
-   3.2 [Auth](#Auth)
+   2.2 [Auth](#Auth)
 
-   3.3 [How token is set](#How-token-is-set)
+   2.3 [How token is set](#How-token-is-set)
 
-   3.4 [How passwords are handled](#How-passwords-are-handled)
+   2.4 [How passwords are handled](#How-passwords-are-handled)
 
-   3.5 [Roles](#Roles)
+   2.5 [Roles](#Roles)
 
-   3.6 [Handling unauthorized access](#Handling-unauthorized-access)
+   2.6 [Handling unauthorized access](#Handling-unauthorized-access)
 
-   3.7 [Communication with end user](#Communication-with-end-user)
+   2.7 [Communication with end user](#Communication-with-end-user)
+
+3. [Logging](#Logging)
 
 4. [Bottom line](#Bottom-line)
 
@@ -97,6 +98,12 @@ This behavior configured in `CustomConfiguration.cs` using `UseStatusCodePages` 
 Shared \_Layout.cshtml has a modal window that hidden. If `ViewData["modalMessage"] ` is not empty then user will get a popup window with that message:
 
 ![ModalMessage](readmeContent/modalWindow1.jpg?raw=true)
+
+### Logging
+
+`Serilog` package is used to log events both to the console and file.
+Configuration is in `Program.cs`, log will be created daily in `Log` folder with prefix `log{Date}.txt`. By default 31 files will be retained.
+Configuration could be found in `appsettings.json`
 
 ### Bottom line
 
