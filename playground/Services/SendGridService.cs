@@ -65,7 +65,8 @@ namespace playground.Services
             var result = await client.SendEmailAsync(mail);
             
             string logString = $@"
-                    Message Subject '{subject}'.
+                    Sent From: '{mailFrom.Email}'
+                    Message Subject: '{subject}'.
                     {(sendTo != null ? "To: " + string.Join(",", sendTo) : String.Empty)}
                     {(ccTo != null ? " CC: " + ccTo : String.Empty)}
                     {(bccTo != null ? " BCC: " + bccTo : String.Empty)}";
