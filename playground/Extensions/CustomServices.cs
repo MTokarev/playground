@@ -70,8 +70,13 @@ namespace playground.Extensions
             {
                 options.UseSqlite(config.GetConnectionString("DefaultConnection"));
             });
+            
             // Adding User Service
             services.AddScoped<IUserService, UserService>();
+
+            // Adding Email Service
+            services.AddTransient<IEmailService, SendGridService>();
+            services.Configure<SendgridOptions>(options => config.GetSection("SendGrid").Bind(options));
 
             return services;
         }

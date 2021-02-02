@@ -17,9 +17,10 @@ namespace playground.Controllers
         private readonly ITokenService _tokenService;
         private readonly ICookiesService _cookiesService;
         private readonly ILogger<UserController> _logger;
+        private readonly IEmailService _emailService;
 
-        public UserController(IUserService userService, ITokenService tokenService
-            , ICookiesService cookiesService, ILogger<UserController> logger)
+        public UserController(IUserService userService, ITokenService tokenService,
+            ICookiesService cookiesService, ILogger<UserController> logger)
         {
             _userService = userService;
             _tokenService = tokenService;

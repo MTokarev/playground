@@ -1,0 +1,140 @@
+2021-02-03 00:25:35.987 +04:00 [INF] User profile is available. Using 'C:\Users\mtoka\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-02-03 00:25:37.691 +04:00 [INF] Now listening on: https://localhost:5001
+2021-02-03 00:25:37.697 +04:00 [INF] Now listening on: http://localhost:5000
+2021-02-03 00:25:37.706 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-03 00:25:37.714 +04:00 [INF] Hosting environment: Development
+2021-02-03 00:25:37.719 +04:00 [INF] Content root path: C:\git\pg\playground
+2021-02-03 00:25:42.296 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/ - -
+2021-02-03 00:25:42.699 +04:00 [INF] Executing endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-03 00:25:42.902 +04:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller playground.Controllers.HomeController (playground).
+2021-02-03 00:25:43.678 +04:00 [INF] Executing action method playground.Controllers.HomeController.Index (playground) - Validation state: "Valid"
+2021-02-03 00:25:43.740 +04:00 [INF] Executed action method playground.Controllers.HomeController.Index (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3.5107ms.
+2021-02-03 00:25:43.853 +04:00 [INF] Executing ViewResult, running view Index.
+2021-02-03 00:25:44.293 +04:00 [INF] Executed ViewResult - view Index executed in 491.8183ms.
+2021-02-03 00:25:44.302 +04:00 [INF] Executed action playground.Controllers.HomeController.Index (playground) in 1379.7949ms
+2021-02-03 00:25:44.310 +04:00 [INF] Executed endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-03 00:25:44.347 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 2055.9685ms
+2021-02-03 00:25:47.341 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/Login - -
+2021-02-03 00:25:47.362 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-03 00:25:47.432 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(Int32) on controller playground.Controllers.UserController (playground).
+2021-02-03 00:25:47.611 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-03 00:25:49.260 +04:00 [INF] Executed action method playground.Controllers.UserController.Login (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1641.4891ms.
+2021-02-03 00:25:49.276 +04:00 [INF] Executing ViewResult, running view Login.
+2021-02-03 00:25:49.556 +04:00 [INF] Executed ViewResult - view Login executed in 283.8651ms.
+2021-02-03 00:25:49.559 +04:00 [INF] Executed action playground.Controllers.UserController.Login (playground) in 2115.1299ms
+2021-02-03 00:25:49.566 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-03 00:25:49.570 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/Login - - - 200 - text/html;+charset=utf-8 2229.0976ms
+2021-02-03 00:25:50.513 +04:00 [INF] Mail has been submitted. 
+                    Message Subject 'Hi'
+                    . To: SendGrid.Helpers.Mail.EmailAddress
+                    
+                    
+2021-02-03 00:26:44.387 +04:00 [INF] User profile is available. Using 'C:\Users\mtoka\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-02-03 00:26:45.548 +04:00 [INF] Now listening on: https://localhost:5001
+2021-02-03 00:26:45.553 +04:00 [INF] Now listening on: http://localhost:5000
+2021-02-03 00:26:45.559 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-03 00:26:45.562 +04:00 [INF] Hosting environment: Development
+2021-02-03 00:26:45.566 +04:00 [INF] Content root path: C:\git\pg\playground
+2021-02-03 00:26:48.669 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/ - -
+2021-02-03 00:26:48.949 +04:00 [INF] Executing endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-03 00:26:49.156 +04:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller playground.Controllers.HomeController (playground).
+2021-02-03 00:26:49.908 +04:00 [INF] Executing action method playground.Controllers.HomeController.Index (playground) - Validation state: "Valid"
+2021-02-03 00:26:49.936 +04:00 [INF] Executed action method playground.Controllers.HomeController.Index (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.3992ms.
+2021-02-03 00:26:50.053 +04:00 [INF] Executing ViewResult, running view Index.
+2021-02-03 00:26:50.412 +04:00 [INF] Executed ViewResult - view Index executed in 421.1562ms.
+2021-02-03 00:26:50.424 +04:00 [INF] Executed action playground.Controllers.HomeController.Index (playground) in 1251.9035ms
+2021-02-03 00:26:50.434 +04:00 [INF] Executed endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-03 00:26:50.480 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 1815.5605ms
+2021-02-03 00:26:52.509 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/Login - -
+2021-02-03 00:26:52.528 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-03 00:26:52.595 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(Int32) on controller playground.Controllers.UserController (playground).
+2021-02-03 00:26:52.763 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-03 00:26:54.264 +04:00 [INF] Executed action method playground.Controllers.UserController.Login (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1489.7165ms.
+2021-02-03 00:26:54.271 +04:00 [INF] Executing ViewResult, running view Login.
+2021-02-03 00:26:54.402 +04:00 [INF] Executed ViewResult - view Login executed in 132.8133ms.
+2021-02-03 00:26:54.444 +04:00 [INF] Executed action playground.Controllers.UserController.Login (playground) in 1834.911ms
+2021-02-03 00:26:54.455 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-03 00:26:54.499 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/Login - - - 200 - text/html;+charset=utf-8 1989.7069ms
+2021-02-03 00:26:55.036 +04:00 [INF] Mail has been submitted. 
+                    Message Subject 'Hi'
+                    . To: m.tokarev@hotmail.com
+                    
+                    
+2021-02-03 00:28:03.286 +04:00 [INF] User profile is available. Using 'C:\Users\mtoka\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-02-03 00:28:04.404 +04:00 [INF] Now listening on: https://localhost:5001
+2021-02-03 00:28:04.408 +04:00 [INF] Now listening on: http://localhost:5000
+2021-02-03 00:28:04.411 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-03 00:28:04.414 +04:00 [INF] Hosting environment: Development
+2021-02-03 00:28:04.417 +04:00 [INF] Content root path: C:\git\pg\playground
+2021-02-03 00:28:07.826 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/ - -
+2021-02-03 00:28:08.224 +04:00 [INF] Executing endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-03 00:28:08.362 +04:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller playground.Controllers.HomeController (playground).
+2021-02-03 00:28:09.212 +04:00 [INF] Executing action method playground.Controllers.HomeController.Index (playground) - Validation state: "Valid"
+2021-02-03 00:28:09.240 +04:00 [INF] Executed action method playground.Controllers.HomeController.Index (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.5808ms.
+2021-02-03 00:28:09.300 +04:00 [INF] Executing ViewResult, running view Index.
+2021-02-03 00:28:09.581 +04:00 [INF] Executed ViewResult - view Index executed in 307.1576ms.
+2021-02-03 00:28:09.587 +04:00 [INF] Executed action playground.Controllers.HomeController.Index (playground) in 1206.9857ms
+2021-02-03 00:28:09.591 +04:00 [INF] Executed endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-03 00:28:09.613 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 1789.9582ms
+2021-02-03 00:28:11.607 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/Login - -
+2021-02-03 00:28:11.628 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-03 00:28:11.700 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(Int32) on controller playground.Controllers.UserController (playground).
+2021-02-03 00:28:11.885 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-03 00:28:13.297 +04:00 [INF] Executed action method playground.Controllers.UserController.Login (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1407.4548ms.
+2021-02-03 00:28:13.314 +04:00 [INF] Executing ViewResult, running view Login.
+2021-02-03 00:28:13.501 +04:00 [INF] Executed ViewResult - view Login executed in 192.3685ms.
+2021-02-03 00:28:13.510 +04:00 [INF] Executed action playground.Controllers.UserController.Login (playground) in 1798.5873ms
+2021-02-03 00:28:13.546 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-03 00:28:13.559 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/Login - - - 200 - text/html;+charset=utf-8 1951.9233ms
+2021-02-03 00:28:14.222 +04:00 [INF] Mail has been submitted. 
+                    Message Subject 'Hi'.
+                    To: m.tokarev@hotmail.com
+                    
+                    
+2021-02-03 00:29:27.367 +04:00 [INF] User profile is available. Using 'C:\Users\mtoka\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-02-03 00:29:28.824 +04:00 [INF] Now listening on: https://localhost:5001
+2021-02-03 00:29:28.832 +04:00 [INF] Now listening on: http://localhost:5000
+2021-02-03 00:29:28.838 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-03 00:29:28.909 +04:00 [INF] Hosting environment: Development
+2021-02-03 00:29:28.915 +04:00 [INF] Content root path: C:\git\pg\playground
+2021-02-03 00:29:31.611 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/ - -
+2021-02-03 00:29:32.045 +04:00 [INF] Executing endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-03 00:29:32.206 +04:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller playground.Controllers.HomeController (playground).
+2021-02-03 00:29:32.965 +04:00 [INF] Executing action method playground.Controllers.HomeController.Index (playground) - Validation state: "Valid"
+2021-02-03 00:29:33.019 +04:00 [INF] Executed action method playground.Controllers.HomeController.Index (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.5992ms.
+2021-02-03 00:29:33.140 +04:00 [INF] Executing ViewResult, running view Index.
+2021-02-03 00:29:33.551 +04:00 [INF] Executed ViewResult - view Index executed in 471.0067ms.
+2021-02-03 00:29:33.562 +04:00 [INF] Executed action playground.Controllers.HomeController.Index (playground) in 1334.5954ms
+2021-02-03 00:29:33.571 +04:00 [INF] Executed endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-03 00:29:33.621 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 2012.6352ms
+2021-02-03 00:29:38.612 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/Login - -
+2021-02-03 00:29:38.628 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-03 00:29:38.697 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(Int32) on controller playground.Controllers.UserController (playground).
+2021-02-03 00:29:38.868 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-03 00:39:21.998 +04:00 [INF] User profile is available. Using 'C:\Users\mtoka\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-02-03 00:39:23.403 +04:00 [INF] Now listening on: https://localhost:5001
+2021-02-03 00:39:23.406 +04:00 [INF] Now listening on: http://localhost:5000
+2021-02-03 00:39:23.410 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-03 00:39:23.414 +04:00 [INF] Hosting environment: Development
+2021-02-03 00:39:23.418 +04:00 [INF] Content root path: C:\git\pg\playground
+2021-02-03 00:39:26.627 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/ - -
+2021-02-03 00:39:27.118 +04:00 [INF] Executing endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-03 00:39:27.216 +04:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller playground.Controllers.HomeController (playground).
+2021-02-03 00:39:28.223 +04:00 [INF] Executing action method playground.Controllers.HomeController.Index (playground) - Validation state: "Valid"
+2021-02-03 00:39:28.249 +04:00 [INF] Executed action method playground.Controllers.HomeController.Index (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.7669ms.
+2021-02-03 00:39:28.308 +04:00 [INF] Executing ViewResult, running view Index.
+2021-02-03 00:39:28.826 +04:00 [INF] Executed ViewResult - view Index executed in 542.3306ms.
+2021-02-03 00:39:28.837 +04:00 [INF] Executed action playground.Controllers.HomeController.Index (playground) in 1611.2696ms
+2021-02-03 00:39:28.845 +04:00 [INF] Executed endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-03 00:39:28.879 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 2254.7442ms
+2021-02-03 00:39:30.656 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/Login - -
+2021-02-03 00:39:30.709 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-03 00:39:30.776 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(Int32) on controller playground.Controllers.UserController (playground).
+2021-02-03 00:39:30.941 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-03 00:39:30.969 +04:00 [ERR] Attempt to send email while 'appsettings.json' doesn't have 'SendGrid' directive.
+2021-02-03 00:39:30.977 +04:00 [INF] Executed action method playground.Controllers.UserController.Login (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 29.0932ms.
+2021-02-03 00:39:30.996 +04:00 [INF] Executing ViewResult, running view Login.
+2021-02-03 00:39:31.228 +04:00 [INF] Executed ViewResult - view Login executed in 236.2424ms.
+2021-02-03 00:39:31.239 +04:00 [INF] Executed action playground.Controllers.UserController.Login (playground) in 449.3212ms
+2021-02-03 00:39:31.265 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-03 00:39:31.290 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/Login - - - 200 - text/html;+charset=utf-8 633.8264ms

@@ -18,6 +18,8 @@
 
    2.7 [Communication with end user](#Communication-with-end-user)
 
+   2.8 [Email configuration](Email)
+
 3. [Logging](#Logging)
 
 4. [Bottom line](#Bottom-line)
@@ -94,6 +96,20 @@ This behavior configured in `CustomConfiguration.cs` using `UseStatusCodePages` 
 Shared \_Layout.cshtml has a modal window that hidden. If `ViewData["modalMessage"] ` is not empty then user will get a popup window with that message:
 
 ![ModalMessage](readmeContent/modalWindow1.jpg?raw=true)
+
+##### Email
+
+Email notification configured thru SendGrid where you need to have an account in provider and generate an API key. Then `appsettings.json` has to be updated with following directive:
+
+```
+  "SendGrid": {
+    "ApiKey": "YOUR_API_KEY",
+    "SenderEmail": "sendFrom@email.address",
+    "SenderName":  "Sender Name"
+  }
+```
+
+How to create an API key: https://sendgrid.com/docs/ui/account-and-settings/api-keys/#creating-an-api-key
 
 ### Logging
 
