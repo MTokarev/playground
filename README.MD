@@ -18,6 +18,8 @@
 
    2.7 [Communication with end user](#Communication-with-end-user)
 
+   2.8 [Email configuration](Email)
+
 3. [Logging](#Logging)
 
 4. [Bottom line](#Bottom-line)
@@ -35,7 +37,7 @@ That includes registering\store users in database.
 ### Why that
 
 You can benefit from this project by using it as a base and extend
-with your own functionality.
+with your awesome functionality.
 
 ### What is inside
 
@@ -56,41 +58,37 @@ JWT tokens are used to provide authorization. There are several claims that assi
 
 ##### How token is set
 
-`Login` method produces **Cookies** that have `X-Access-Token` and `X-Username` set.
-By default token is not assigned to the requests and wouldn't work if you won't
-add Bearer token by default.
-That is why JWT has an event `OnMessageReceived` configured (in `CustomServices.cs`) that
-reads Cookies and sets http context to send Bearer token inside the request.
-Each token is valid for 3 days (you can configure this setting in `appsettings.json`)
+`Login` method produces **Cookies** that have `X-Access-Token` and `X-Username`.
+By default token is not assigned to the further requests and pages that require authorization won't work if you wouldn't include `Bearer` token.
+That is why JWT has an event `OnMessageReceived` configured (in `CustomServices.cs`) that reads Cookies and sets http context to send Bearer token inside the request.
+Each token is valid for 3 days (configurable in `appsettings.json`)
 
 ##### How passwords are handled
 
 To complicate rainbow table usage against passwords additional layer on top of hashing was used.
-By default each user has an unique SALT key (SHA512) generated and stored in Users table `passwordSalt` column. This salt is used to compute hash for password.
+By default each user has an unique SALT key (SHA512) generated and stored in `Users` table `passwordSalt` column. This salt is used to compute hash for password.
 
 ##### Roles
 
-For sake of showing how the roles work few entries were created:
+For sake of showing how the roles work - several were created:
 
 - Administrator
 - User
 
 ###### Role assignments
 
-Each user could have one or more than one role. Role assignments stored in `Roles` table. Relationship between user and roles configured in one-to-many manner and cascade deletion enabled. That means no matter how many assignments user has all will be removed when user deleted.
+Each user could have one or more than one role. Role assignments stored in `Roles` table. Relationship between user and roles configured in one-to-many manner and cascade deletion enabled. That means no matter how many assignments user have all will be removed when user deleted.
 
 User with email **admin@localhost** gets **Administrator** role assigned by default.
-Other users get **User** role assigned.
+Other users get **User** role.
 
 **_How to know role works_**:
 
-`User` role has an access to get all users from DB, open page '/user/GetAllUsers' to retrieve a list. To check `Administrator` role you can try to Remove user from '/user/GetAllUsers'.
-Other way of checking is to access role assignment page
-'/user/GetAllRoleAssignments'.
+`User` role has an access to read all users from DB. You can do that by opening page `/user/GetAllUsers`. To check `Administrator` role you can try to Remove user from same list or access role assignment page `/user/GetAllRoleAssignments`.
 
 ##### Handling unauthorized access
 
-All response with 401 and 403 status redirect to "/error/showError?errorCode={responseCode}".
+All response with **401** and **403** status will be redirected to `/error/showError?errorCode={responseCode}` page and user will be notified with error message.
 This behavior configured in `CustomConfiguration.cs` using `UseStatusCodePages` middleware.
 
 ##### Communication with end user
@@ -99,14 +97,25 @@ Shared \_Layout.cshtml has a modal window that hidden. If `ViewData["modalMessag
 
 ![ModalMessage](readmeContent/modalWindow1.jpg?raw=true)
 
+##### Email
+
+Email notification configured thru SendGrid where you need to have an account in provider and generate an API key. Then `appsettings.json` has to be updated with following directive:
+
+```
+  "SendGrid": {
+    "ApiKey": "YOUR_API_KEY",
+    "SenderEmail": "sendFrom@email.address",
+    "SenderName":  "Sender Name"
+  }
+```
+
+How to create an API key: https://sendgrid.com/docs/ui/account-and-settings/api-keys/#creating-an-api-key
+
 ### Logging
 
-`Serilog` package is used to log events both to the console and file.
-Configuration is in `Program.cs`, log will be created daily in `Log` folder with prefix `log{Date}.txt`. By default 31 files will be retained.
+`Serilog` package is used to log events both to the console and file. Log file will be created daily in `./Log` folder with prefix `log{Date}.txt`. By default 31 files will be retained.
 Configuration could be found in `appsettings.json`
 
 ### Bottom line
 
-I purposely removed bootstrap and JQuery from project to try JS\HTML\CSS.
-This is my first project that includes FrontEnd created from scratch.
-I am pretty sure that CSS\HTML parts could be optimized.
+I purposely removed bootstrap and JQuery from project to try JS\HTML\CSS. This is my first project that includes FrontEnd created from scratch. I am pretty sure that CSS\HTML parts could be optimized (well, to be honest c# part also could be optimized😎).
