@@ -16,6 +16,9 @@ namespace playground.Controllers
                 ViewData["modalMessage"] = "ERROR: User role is not enough to perform this operation";
             }
 
+            TempData.TryGetValue("modalMessage", out var modalMessage);
+            ViewData["modalMessage"] = modalMessage;
+
             return View();
         }
     }

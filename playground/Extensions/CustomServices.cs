@@ -78,6 +78,9 @@ namespace playground.Extensions
             services.AddTransient<IEmailService, SendGridService>();
             services.Configure<SendgridOptions>(options => config.GetSection("SendGrid").Bind(options));
 
+            // Adding Key Service (Reset Password)
+            services.AddScoped<IActionKeyService, ActionKeyService>();
+
             return services;
         }
     }

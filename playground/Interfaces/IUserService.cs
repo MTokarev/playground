@@ -65,5 +65,13 @@ namespace playground.Interfaces
         /// <param name="email"></param>
         /// <returns>Returns user</returns>
         Task<EUser> GetUserByEmailAsync(string email);
+
+        /// <summary>
+        /// Set new password
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        Task<UserActionResult> PasswordReset(string email, string password);
     }
 }

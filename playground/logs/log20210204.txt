@@ -1,0 +1,288 @@
+2021-02-04 00:01:11.152 +04:00 [INF] Executed DbCommand (18ms) [Parameters=[@__email_0='?' (Size = 21)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 2
+2021-02-04 00:01:11.310 +04:00 [INF] Executed action playground.Controllers.UserController.PasswordReset (playground) in 128557.4418ms
+2021-02-04 00:01:11.312 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.PasswordReset (playground)'
+2021-02-04 00:01:11.317 +04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at playground.Services.UserService.PasswordReset(String email, String password) in C:\git\pg\playground\Services\UserService.cs:line 174
+   at playground.Controllers.UserController.PasswordReset(PasswordResetDto passwordResetDto) in C:\git\pg\playground\Controllers\UserController.cs:line 158
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-02-04 00:01:11.331 +04:00 [INF] Request finished HTTP/2 POST https://localhost:5001/User/PasswordReset application/x-www-form-urlencoded 274 - 500 - text/html;+charset=utf-8 128586.9316ms
+2021-02-04 00:01:14.264 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/user/passwordReset?key=4493B34E-ABA0-415A-AB3B-E4B1087971B4 - -
+2021-02-04 00:01:14.275 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.PasswordReset (playground)'
+2021-02-04 00:01:14.284 +04:00 [INF] Route matched with {action = "PasswordReset", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PasswordReset(System.String) on controller playground.Controllers.UserController (playground).
+2021-02-04 00:01:14.394 +04:00 [INF] Executing action method playground.Controllers.UserController.PasswordReset (playground) - Validation state: "Valid"
+2021-02-04 00:01:14.401 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 00:01:14.412 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."ActionKey", "u"."EUserid", "u"."UserId"
+FROM "UserActionKeys" AS "u"
+WHERE "u"."ActionKey" = @__key_0
+LIMIT 2
+2021-02-04 00:01:14.420 +04:00 [INF] Password reset key was accessed: '4493b34e-aba0-415a-ab3b-e4b1087971b4'
+2021-02-04 00:01:14.424 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."id" = @__id_0
+LIMIT 2
+2021-02-04 00:01:14.428 +04:00 [INF] Executed action method playground.Controllers.UserController.PasswordReset (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 28.5011ms.
+2021-02-04 00:01:14.434 +04:00 [INF] Executing ViewResult, running view PasswordReset.
+2021-02-04 00:01:14.437 +04:00 [INF] Executed ViewResult - view PasswordReset executed in 3.773ms.
+2021-02-04 00:01:14.439 +04:00 [INF] Executed action playground.Controllers.UserController.PasswordReset (playground) in 133.6009ms
+2021-02-04 00:01:14.441 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.PasswordReset (playground)'
+2021-02-04 00:01:14.443 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/user/passwordReset?key=4493B34E-ABA0-415A-AB3B-E4B1087971B4 - - - 200 - text/html;+charset=utf-8 180.0555ms
+2021-02-04 00:01:27.941 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/css/site.css - -
+2021-02-04 00:01:27.943 +04:00 [INF] The file /css/site.css was not modified
+2021-02-04 00:01:27.946 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/css/site.css - - - 304 - text/css 4.6317ms
+2021-02-04 00:01:36.615 +04:00 [INF] Request starting HTTP/2 POST https://localhost:5001/User/PasswordReset application/x-www-form-urlencoded 274
+2021-02-04 00:01:36.624 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.PasswordReset (playground)'
+2021-02-04 00:01:36.636 +04:00 [INF] Route matched with {action = "PasswordReset", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PasswordReset(playground.DTOs.PasswordResetDto) on controller playground.Controllers.UserController (playground).
+2021-02-04 00:01:36.687 +04:00 [INF] Executing action method playground.Controllers.UserController.PasswordReset (playground) - Validation state: "Invalid"
+2021-02-04 00:01:36.690 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 00:01:36.695 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."ActionKey", "u"."EUserid", "u"."UserId"
+FROM "UserActionKeys" AS "u"
+WHERE "u"."ActionKey" = @__key_0
+LIMIT 2
+2021-02-04 00:01:36.702 +04:00 [INF] Password reset key was accessed: '4493b34e-aba0-415a-ab3b-e4b1087971b4'
+2021-02-04 00:02:29.824 +04:00 [INF] User profile is available. Using 'C:\Users\mtoka\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-02-04 00:02:30.424 +04:00 [INF] Now listening on: https://localhost:5001
+2021-02-04 00:02:30.426 +04:00 [INF] Now listening on: http://localhost:5000
+2021-02-04 00:02:30.427 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-04 00:02:30.428 +04:00 [INF] Hosting environment: Development
+2021-02-04 00:02:30.438 +04:00 [INF] Content root path: C:\git\pg\playground
+2021-02-04 00:02:34.601 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/ - -
+2021-02-04 00:02:34.814 +04:00 [INF] Executing endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-04 00:02:34.864 +04:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller playground.Controllers.HomeController (playground).
+2021-02-04 00:02:35.098 +04:00 [INF] Executing action method playground.Controllers.HomeController.Index (playground) - Validation state: "Valid"
+2021-02-04 00:02:35.109 +04:00 [INF] Executed action method playground.Controllers.HomeController.Index (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.6412ms.
+2021-02-04 00:02:35.137 +04:00 [INF] Executing ViewResult, running view Index.
+2021-02-04 00:02:35.283 +04:00 [INF] Executed ViewResult - view Index executed in 157.6162ms.
+2021-02-04 00:02:35.287 +04:00 [INF] Executed action playground.Controllers.HomeController.Index (playground) in 418.5024ms
+2021-02-04 00:02:35.289 +04:00 [INF] Executed endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-04 00:02:35.298 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 704.5062ms
+2021-02-04 00:02:39.745 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/user/passwordReset?key=4493B34E-ABA0-415A-AB3B-E4B1087971B4 - -
+2021-02-04 00:02:39.752 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.PasswordReset (playground)'
+2021-02-04 00:02:39.803 +04:00 [INF] Route matched with {action = "PasswordReset", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PasswordReset(System.String) on controller playground.Controllers.UserController (playground).
+2021-02-04 00:02:39.888 +04:00 [INF] Executing action method playground.Controllers.UserController.PasswordReset (playground) - Validation state: "Valid"
+2021-02-04 00:02:41.427 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 00:02:42.357 +04:00 [INF] Executed DbCommand (49ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."ActionKey", "u"."EUserid", "u"."UserId"
+FROM "UserActionKeys" AS "u"
+WHERE "u"."ActionKey" = @__key_0
+LIMIT 2
+2021-02-04 00:02:42.506 +04:00 [INF] Password reset key was accessed: '4493b34e-aba0-415a-ab3b-e4b1087971b4'
+2021-02-04 00:02:42.529 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."id" = @__id_0
+LIMIT 2
+2021-02-04 00:02:42.663 +04:00 [INF] Executed action method playground.Controllers.UserController.PasswordReset (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2772.2937ms.
+2021-02-04 00:02:42.670 +04:00 [INF] Executing ViewResult, running view PasswordReset.
+2021-02-04 00:02:42.768 +04:00 [INF] Executed ViewResult - view PasswordReset executed in 98.376ms.
+2021-02-04 00:02:42.789 +04:00 [INF] Executed action playground.Controllers.UserController.PasswordReset (playground) in 2981.2541ms
+2021-02-04 00:02:42.793 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.PasswordReset (playground)'
+2021-02-04 00:02:42.805 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/user/passwordReset?key=4493B34E-ABA0-415A-AB3B-E4B1087971B4 - - - 200 - text/html;+charset=utf-8 3059.8438ms
+2021-02-04 00:02:45.550 +04:00 [INF] Request starting HTTP/2 POST https://localhost:5001/User/PasswordReset application/x-www-form-urlencoded 274
+2021-02-04 00:02:45.565 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.PasswordReset (playground)'
+2021-02-04 00:02:45.584 +04:00 [INF] Route matched with {action = "PasswordReset", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PasswordReset(playground.DTOs.PasswordResetDto) on controller playground.Controllers.UserController (playground).
+2021-02-04 00:02:45.669 +04:00 [INF] Executing action method playground.Controllers.UserController.PasswordReset (playground) - Validation state: "Valid"
+2021-02-04 00:02:45.741 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 00:02:45.757 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."ActionKey", "u"."EUserid", "u"."UserId"
+FROM "UserActionKeys" AS "u"
+WHERE "u"."ActionKey" = @__key_0
+LIMIT 2
+2021-02-04 00:02:45.767 +04:00 [INF] Password reset key was accessed: '4493b34e-aba0-415a-ab3b-e4b1087971b4'
+2021-02-04 00:03:05.468 +04:00 [INF] User profile is available. Using 'C:\Users\mtoka\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-02-04 00:03:06.113 +04:00 [INF] Now listening on: https://localhost:5001
+2021-02-04 00:03:06.114 +04:00 [INF] Now listening on: http://localhost:5000
+2021-02-04 00:03:06.116 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-04 00:03:06.117 +04:00 [INF] Hosting environment: Development
+2021-02-04 00:03:06.118 +04:00 [INF] Content root path: C:\git\pg\playground
+2021-02-04 00:03:08.471 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/ - -
+2021-02-04 00:03:08.700 +04:00 [INF] Executing endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-04 00:03:08.809 +04:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller playground.Controllers.HomeController (playground).
+2021-02-04 00:03:09.201 +04:00 [INF] Executing action method playground.Controllers.HomeController.Index (playground) - Validation state: "Valid"
+2021-02-04 00:03:09.212 +04:00 [INF] Executed action method playground.Controllers.HomeController.Index (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.7737ms.
+2021-02-04 00:03:09.238 +04:00 [INF] Executing ViewResult, running view Index.
+2021-02-04 00:03:09.365 +04:00 [INF] Executed ViewResult - view Index executed in 138.289ms.
+2021-02-04 00:03:09.370 +04:00 [INF] Executed action playground.Controllers.HomeController.Index (playground) in 550.9063ms
+2021-02-04 00:03:09.372 +04:00 [INF] Executed endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-04 00:03:09.381 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 912.1387ms
+2021-02-04 00:03:11.423 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/Register - -
+2021-02-04 00:03:11.442 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Register (playground)'
+2021-02-04 00:03:11.458 +04:00 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller playground.Controllers.UserController (playground).
+2021-02-04 00:03:11.515 +04:00 [INF] Executing action method playground.Controllers.UserController.Register (playground) - Validation state: "Valid"
+2021-02-04 00:03:11.520 +04:00 [INF] Executed action method playground.Controllers.UserController.Register (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3838ms.
+2021-02-04 00:03:11.528 +04:00 [INF] Executing ViewResult, running view Register.
+2021-02-04 00:03:11.630 +04:00 [INF] Executed ViewResult - view Register executed in 103.421ms.
+2021-02-04 00:03:11.634 +04:00 [INF] Executed action playground.Controllers.UserController.Register (playground) in 164.0271ms
+2021-02-04 00:03:11.643 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Register (playground)'
+2021-02-04 00:03:11.648 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/Register - - - 200 - text/html;+charset=utf-8 225.1672ms
+2021-02-04 00:03:14.613 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/user/passwordReset?key=4493B34E-ABA0-415A-AB3B-E4B1087971B4 - -
+2021-02-04 00:03:14.624 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.PasswordReset (playground)'
+2021-02-04 00:03:14.662 +04:00 [INF] Route matched with {action = "PasswordReset", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PasswordReset(System.String) on controller playground.Controllers.UserController (playground).
+2021-02-04 00:03:14.739 +04:00 [INF] Executing action method playground.Controllers.UserController.PasswordReset (playground) - Validation state: "Valid"
+2021-02-04 00:03:16.306 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 00:03:17.223 +04:00 [INF] Executed DbCommand (52ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."ActionKey", "u"."EUserid", "u"."UserId"
+FROM "UserActionKeys" AS "u"
+WHERE "u"."ActionKey" = @__key_0
+LIMIT 2
+2021-02-04 00:03:17.371 +04:00 [INF] Password reset key was accessed: '4493b34e-aba0-415a-ab3b-e4b1087971b4'
+2021-02-04 00:03:17.390 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."id" = @__id_0
+LIMIT 2
+2021-02-04 00:03:17.513 +04:00 [INF] Executed action method playground.Controllers.UserController.PasswordReset (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2770.2362ms.
+2021-02-04 00:03:17.519 +04:00 [INF] Executing ViewResult, running view PasswordReset.
+2021-02-04 00:03:17.541 +04:00 [INF] Executed ViewResult - view PasswordReset executed in 23.8062ms.
+2021-02-04 00:03:17.545 +04:00 [INF] Executed action playground.Controllers.UserController.PasswordReset (playground) in 2878.1903ms
+2021-02-04 00:03:17.551 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.PasswordReset (playground)'
+2021-02-04 00:03:17.558 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/user/passwordReset?key=4493B34E-ABA0-415A-AB3B-E4B1087971B4 - - - 200 - text/html;+charset=utf-8 2944.9329ms
+2021-02-04 00:03:21.800 +04:00 [INF] Request starting HTTP/2 POST https://localhost:5001/User/PasswordReset application/x-www-form-urlencoded 277
+2021-02-04 00:03:21.803 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.PasswordReset (playground)'
+2021-02-04 00:03:21.813 +04:00 [INF] Route matched with {action = "PasswordReset", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PasswordReset(playground.DTOs.PasswordResetDto) on controller playground.Controllers.UserController (playground).
+2021-02-04 00:03:21.893 +04:00 [INF] Executing action method playground.Controllers.UserController.PasswordReset (playground) - Validation state: "Valid"
+2021-02-04 00:03:21.959 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 00:03:21.977 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."ActionKey", "u"."EUserid", "u"."UserId"
+FROM "UserActionKeys" AS "u"
+WHERE "u"."ActionKey" = @__key_0
+LIMIT 2
+2021-02-04 00:03:21.986 +04:00 [INF] Password reset key was accessed: '4493b34e-aba0-415a-ab3b-e4b1087971b4'
+2021-02-04 00:03:21.998 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 21)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 2
+2021-02-04 00:03:22.231 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[@p3='?', @p0='?', @p1='?' (Size = 64), @p2='?' (Size = 128)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "LastUpdatedUTC" = @p0, "PasswordHash" = @p1, "PasswordSalt" = @p2
+WHERE "id" = @p3;
+SELECT changes();
+2021-02-04 00:03:22.281 +04:00 [INF] Password for user: 'm.tokarev@hotmail.com' has been update.
+2021-02-04 00:03:22.284 +04:00 [INF] Executed action method playground.Controllers.UserController.PasswordReset (playground), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 388.2502ms.
+2021-02-04 00:03:22.287 +04:00 [INF] Executing RedirectResult, redirecting to /user/login.
+2021-02-04 00:03:22.306 +04:00 [INF] Executed action playground.Controllers.UserController.PasswordReset (playground) in 489.1643ms
+2021-02-04 00:03:22.308 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.PasswordReset (playground)'
+2021-02-04 00:03:22.310 +04:00 [INF] Request finished HTTP/2 POST https://localhost:5001/User/PasswordReset application/x-www-form-urlencoded 277 - 302 0 - 510.0380ms
+2021-02-04 00:03:22.314 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/user/login - -
+2021-02-04 00:03:22.316 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 00:03:22.320 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(Int32) on controller playground.Controllers.UserController (playground).
+2021-02-04 00:03:22.362 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-04 00:03:22.367 +04:00 [INF] Executed action method playground.Controllers.UserController.Login (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.476ms.
+2021-02-04 00:03:22.374 +04:00 [INF] Executing ViewResult, running view Login.
+2021-02-04 00:03:22.396 +04:00 [INF] Executed ViewResult - view Login executed in 23.5497ms.
+2021-02-04 00:03:22.398 +04:00 [INF] Executed action playground.Controllers.UserController.Login (playground) in 75.3687ms
+2021-02-04 00:03:22.401 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 00:03:22.403 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/user/login - - - 200 - text/html;+charset=utf-8 88.9446ms
+2021-02-04 00:03:30.363 +04:00 [INF] Request starting HTTP/2 POST https://localhost:5001/User/Login application/x-www-form-urlencoded 233
+2021-02-04 00:03:30.365 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 00:03:30.378 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[playground.Entities.EUser]] Login(playground.DTOs.UserToLoginDto) on controller playground.Controllers.UserController (playground).
+2021-02-04 00:03:30.419 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-04 00:03:30.445 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 00:03:30.456 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 21)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 2
+2021-02-04 00:03:30.471 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@p2='?', @p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "LastLoginUTC" = @p0, "LoginsCount" = @p1
+WHERE "id" = @p2;
+SELECT changes();
+2021-02-04 00:03:30.507 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "r"."Id", "r"."EUserId", "r"."Role"
+FROM "Roles" AS "r"
+WHERE "r"."EUserId" = @__userId_0
+2021-02-04 00:03:30.813 +04:00 [INF] Executed action method playground.Controllers.UserController.Login (playground), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 389.1873ms.
+2021-02-04 00:03:30.817 +04:00 [INF] Executing RedirectResult, redirecting to /user/getAllUsers.
+2021-02-04 00:03:30.820 +04:00 [INF] Executed action playground.Controllers.UserController.Login (playground) in 437.1614ms
+2021-02-04 00:03:30.825 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 00:03:30.829 +04:00 [INF] Request finished HTTP/2 POST https://localhost:5001/User/Login application/x-www-form-urlencoded 233 - 302 0 - 465.9385ms
+2021-02-04 00:03:30.837 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/user/getAllUsers - -
+2021-02-04 00:03:30.987 +04:00 [INF] Successfully validated the token.
+2021-02-04 00:03:30.999 +04:00 [INF] Authorization was successful.
+2021-02-04 00:03:31.002 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.GetAllUsers (playground)'
+2021-02-04 00:03:31.012 +04:00 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[playground.Entities.EUser]]] GetAllUsers() on controller playground.Controllers.UserController (playground).
+2021-02-04 00:03:31.060 +04:00 [INF] Executing action method playground.Controllers.UserController.GetAllUsers (playground) - Validation state: "Valid"
+2021-02-04 00:03:31.068 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 00:03:31.085 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+2021-02-04 00:03:31.098 +04:00 [INF] Executed action method playground.Controllers.UserController.GetAllUsers (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 34.3019ms.
+2021-02-04 00:03:31.103 +04:00 [INF] Executing ViewResult, running view User.
+2021-02-04 00:03:31.117 +04:00 [INF] Executed ViewResult - view User executed in 14.6575ms.
+2021-02-04 00:03:31.120 +04:00 [INF] Executed action playground.Controllers.UserController.GetAllUsers (playground) in 102.534ms
+2021-02-04 00:03:31.125 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.GetAllUsers (playground)'
+2021-02-04 00:03:31.134 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/user/getAllUsers - - - 200 - text/html;+charset=utf-8 296.7500ms
+2021-02-04 00:03:31.164 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/css/site.css - -
+2021-02-04 00:03:31.171 +04:00 [INF] The file /css/site.css was not modified
+2021-02-04 00:03:31.175 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/css/site.css - - - 304 - text/css 10.7808ms
+2021-02-04 00:03:50.129 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/user/passwordReset?key=4493B34E-ABA0-415A-AB3B-E4B1087971B4 - -
+2021-02-04 00:03:50.132 +04:00 [INF] Successfully validated the token.
+2021-02-04 00:03:50.134 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.PasswordReset (playground)'
+2021-02-04 00:03:50.137 +04:00 [INF] Route matched with {action = "PasswordReset", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PasswordReset(System.String) on controller playground.Controllers.UserController (playground).
+2021-02-04 00:03:50.176 +04:00 [INF] Executing action method playground.Controllers.UserController.PasswordReset (playground) - Validation state: "Valid"
+2021-02-04 00:03:50.180 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 00:03:50.191 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."ActionKey", "u"."EUserid", "u"."UserId"
+FROM "UserActionKeys" AS "u"
+WHERE "u"."ActionKey" = @__key_0
+LIMIT 2
+2021-02-04 00:03:50.201 +04:00 [INF] Password reset key was accessed: '4493b34e-aba0-415a-ab3b-e4b1087971b4'
+2021-02-04 00:03:50.208 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."id" = @__id_0
+LIMIT 2
+2021-02-04 00:03:50.225 +04:00 [INF] Executed action method playground.Controllers.UserController.PasswordReset (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 45.0932ms.
+2021-02-04 00:03:50.232 +04:00 [INF] Executing ViewResult, running view PasswordReset.
+2021-02-04 00:03:50.239 +04:00 [INF] Executed ViewResult - view PasswordReset executed in 7.4892ms.
+2021-02-04 00:03:50.241 +04:00 [INF] Executed action playground.Controllers.UserController.PasswordReset (playground) in 99.1884ms
+2021-02-04 00:03:50.244 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.PasswordReset (playground)'
+2021-02-04 00:03:50.248 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/user/passwordReset?key=4493B34E-ABA0-415A-AB3B-E4B1087971B4 - - - 200 - text/html;+charset=utf-8 119.5937ms
+2021-02-04 00:03:54.166 +04:00 [INF] Request starting HTTP/2 POST https://localhost:5001/User/PasswordReset application/x-www-form-urlencoded 321
+2021-02-04 00:03:54.170 +04:00 [INF] Successfully validated the token.
+2021-02-04 00:03:54.173 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.PasswordReset (playground)'
+2021-02-04 00:03:54.175 +04:00 [INF] Route matched with {action = "PasswordReset", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PasswordReset(playground.DTOs.PasswordResetDto) on controller playground.Controllers.UserController (playground).
+2021-02-04 00:03:54.222 +04:00 [INF] Executing action method playground.Controllers.UserController.PasswordReset (playground) - Validation state: "Valid"
+2021-02-04 00:03:54.227 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 00:03:54.238 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."ActionKey", "u"."EUserid", "u"."UserId"
+FROM "UserActionKeys" AS "u"
+WHERE "u"."ActionKey" = @__key_0
+LIMIT 2
+2021-02-04 00:03:54.244 +04:00 [INF] Password reset key was accessed: '4493b34e-aba0-415a-ab3b-e4b1087971b4'
+2021-02-04 00:03:54.251 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 21)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 2
+2021-02-04 00:03:54.264 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?', @p0='?', @p1='?' (Size = 64), @p2='?' (Size = 128)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "LastUpdatedUTC" = @p0, "PasswordHash" = @p1, "PasswordSalt" = @p2
+WHERE "id" = @p3;
+SELECT changes();
+2021-02-04 00:03:54.283 +04:00 [INF] Password for user: 'm.tokarev@hotmail.com' has been update.

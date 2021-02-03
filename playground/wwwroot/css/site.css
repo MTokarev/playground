@@ -41,6 +41,10 @@ body {
     border-bottom: 1px solid #bebebe;
 }
 
+.hidden {
+    display: none;
+}
+
 .text-danger {
     color: orangered;
     text-align: center;
@@ -60,6 +64,12 @@ body {
 
 .container-center {
     margin: auto;
+}
+
+.container-forgot-password {
+    position: absolute;
+    bottom: 0;
+    padding: 15px 60px;
 }
 
 .logo {
@@ -94,9 +104,9 @@ body {
     display: flex
 }
 
-/*Login form*/
+/*custom form*/
 
-.login-form {
+.form-custom {
     position: relative;
     max-width: 30rem;
     max-height: 40rem;
@@ -110,7 +120,7 @@ body {
     height: 100%;
 }
 
-.login-button {
+.submit-button {
     background-color: #4CAF50;
     border: none;
     border-radius: 15px;
@@ -121,25 +131,17 @@ body {
     transition: all ease-in-out 0.2s;
 }
 
-.login-button:hover {
+.submit-button:hover {
     background-color: #429746;
     cursor: pointer;
 }
 
-.login-input {
+.input-custom {
     width: 15rem;
     border: none;
     border-radius: 15px;
     padding: 5px;
     margin-bottom: 5px;
-    transition: all ease-in-out 0.2s;
-}
-
-.password-input {
-    width: 15rem;
-    border: none;
-    border-radius: 15px;
-    padding: 5px;
     transition: all ease-in-out 0.2s;
 }
 
@@ -194,7 +196,7 @@ footer {
 
 /*Action classes*/
 
-.login-input:focus, .password-input:focus, button:focus {
+.input-custom:focus, button:focus {
     outline: none;
     box-shadow: 3px 3px 2px #bebebe;
 }

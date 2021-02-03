@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using playground.Data;
 using playground.DTOs;
 using playground.Entities;
 using playground.Interfaces;
 using playground.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -14,11 +16,13 @@ namespace playground.Services
 {
     public class UserService : IUserService
     {
-        private DatabaseContext _dbcontext;
+        private readonly DatabaseContext _dbcontext;
+        private readonly ILogger<UserService> _logger;
 
-        public UserService(DatabaseContext dbcontext)
+        public UserService(DatabaseContext dbcontext, ILogger<UserService> logger)
         {
             _dbcontext = dbcontext;
+            _logger = logger;
         }
 
         public async Task<UserActionResult> RegisterUserAsync(UserToRegisterDto userToRegister, ERoles role = ERoles.User)
@@ -26,12 +30,7 @@ namespace playground.Services
             // Checking if user exist
             if (await CheckUserExistAync(userToRegister.Email))
             {
-                return new UserActionResult()
-                {
-                    UserId = 0,
-                    HasError = true,
-                    Message = $"User with email '{userToRegister.Email}' already exist."
-                };
+                return InitResult(0, null, true, $"User with email '{userToRegister.Email}' already exist.");
             }
 
             // Adding crypto service to generate salt and use hashing
@@ -43,7 +42,8 @@ namespace playground.Services
                 LastName = userToRegister.LastName,
                 Email = userToRegister.Email.ToLower(),
                 PasswordSalt = hmac.Key,
-                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(userToRegister.Password))
+                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(userToRegister.Password)),
+                CreatedUTC = DateTime.UtcNow
             };
 
             // Create user
@@ -61,12 +61,7 @@ namespace playground.Services
             await _dbcontext.Roles.AddAsync(userRole);
             await _dbcontext.SaveChangesAsync();
 
-            return new UserActionResult()
-            {
-                UserId = user.id,
-                HasError = false,
-                Message = $"User '{userToRegister.Email}' has been registered."
-            };
+            return InitResult(user.id, null, false, $"User '{userToRegister.Email}' has been registered.");
         }
 
         public async Task<IEnumerable<EUser>> GetAllUsersAsync()
@@ -92,12 +87,7 @@ namespace playground.Services
             // This action will break on Failure and return task result with Status: Faulted
             var result = await _dbcontext.SaveChangesAsync();
 
-            return new UserActionResult()
-            {
-                UserId = id,
-                HasError = false,
-                Message = $"User '{userToRemove.Email}' has been removed. '{result}' row affected."
-            };
+            return InitResult(id, null, false, $"User '{userToRemove.Email}' has been removed. '{result}' row affected.");
         }
 
         public async Task<EUser> GetUserByIdAsync(int id)
@@ -136,6 +126,11 @@ namespace playground.Services
                 }
             }
 
+            // Update login stats
+            user.LastLoginUTC = DateTime.UtcNow;
+            user.LoginsCount++;
+            await _dbcontext.SaveChangesAsync();
+
             // Get user roles
             var userRoles = await GetUserRolesAsync(user.id);
 
@@ -158,6 +153,40 @@ namespace playground.Services
                 HasError = hasError,
                 Message = message
             };
+        }
+
+        public async Task<UserActionResult> PasswordReset(string email, string password)
+        {
+            UserActionResult result;
+            var user = await GetUserByEmailAsync(email);
+
+            if(user == null)
+            {
+                _logger.LogWarning($"Unable reset password for user '{email}'. User not found.");
+                result = InitResult(0, null, true, $"Unable to find user with email '{email}'.");
+
+                return result;
+            }
+
+            using var hmac = new HMACSHA512();
+
+            user.PasswordSalt = hmac.Key;
+            user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
+            user.LastUpdatedUTC = DateTime.UtcNow;
+
+            var dbresult = await _dbcontext.SaveChangesAsync();
+
+            if(dbresult == 0)
+            {
+                _logger.LogWarning($"Unable reset password for user '{email}'. Database error.");
+                result = InitResult(0, null, true, $"Unable to save new password to database for user: '{email}'.");
+
+                return result;
+            }
+
+            _logger.LogInformation($"Password for user: '{user.Email}' has been update.");
+
+            return InitResult(user.id, user.Roles, false, $"Password for '{user.Email}' has been updated.");
         }
     }
 }

@@ -6,6 +6,7 @@ using playground.DTOs;
 using playground.Entities;
 using playground.Interfaces;
 using playground.Models;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -17,15 +18,17 @@ namespace playground.Controllers
         private readonly ITokenService _tokenService;
         private readonly ICookiesService _cookiesService;
         private readonly ILogger<UserController> _logger;
-        private readonly IEmailService _emailService;
+        private readonly IActionKeyService _keyService;
 
         public UserController(IUserService userService, ITokenService tokenService,
-            ICookiesService cookiesService, ILogger<UserController> logger)
+            ICookiesService cookiesService, ILogger<UserController> logger,
+            IActionKeyService keyService)
         {
             _userService = userService;
             _tokenService = tokenService;
             _cookiesService = cookiesService;
             _logger = logger;
+            _keyService = keyService;
         }
 
         public IActionResult Index()
@@ -94,6 +97,94 @@ namespace playground.Controllers
 
             return View("UserCreatedSuccesfully");
         }
+
+        [HttpGet]
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> PasswordReset([FromQuery] string key)
+        {
+            if(key == null || !Guid.TryParse(key, out var validGuid))
+            {
+                TempData["modalMessage"] = "Invalid key provided. Try reset password again.";
+
+                return Redirect("/error/showError");
+            }
+            var keyFromDbResult = await _keyService.GetKeyAsync(new Guid(key), removeKey: false);
+
+            if (keyFromDbResult.HasError)
+            {
+                TempData["modalMessage"] = keyFromDbResult.Message;
+
+                return Redirect("/error/showError");
+            }
+            var user = await _userService.GetUserByIdAsync(keyFromDbResult.UserId);
+
+            if(user == null)
+            {
+                TempData["modalMessage"] = $"Unable to find user with id: '{keyFromDbResult.UserId}'";
+
+                return Redirect("/error/showError");
+            }
+
+            // Setting email and key, it would be passed to the POST to do a second validation.
+            ViewData["email"] = user.Email;
+            ViewData["key"] = key;
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PasswordReset([FromForm] PasswordResetDto passwordResetDto)
+        {
+            if (passwordResetDto.Key == null || !Guid.TryParse(passwordResetDto.Key, out var validGuid))
+            {
+                TempData["modalMessage"] = "Invalid key provided. Try reset password again.";
+
+                return Redirect("/error/showError");
+            }
+            var keyFromDbResult = await _keyService.GetKeyAsync(new Guid(passwordResetDto.Key), removeKey: false);
+
+            if (keyFromDbResult.HasError)
+            {
+                TempData["modalMessage"] = keyFromDbResult.Message;
+
+                return Redirect("/error/showError");
+            }
+
+            var result = await _userService.PasswordReset(passwordResetDto.Email, passwordResetDto.NewPassword);
+
+            if(result.HasError)
+            {
+                TempData["modalMessage"] = result.Message;
+
+                return Redirect("/error/showError");
+            }
+
+            return Redirect("/user/login");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> GeneratePasswordResetLink(string email)
+        {
+            var newKeyResult = await _keyService.GenerateKeyAsync(email);
+
+            if (newKeyResult.HasError)
+            {
+                TempData["modalMessage"] = $"ERROR: {newKeyResult.Message}";
+
+                return Redirect("/error/showError");
+            }
+
+            ViewData["modalMessage"] = "Please check your email for password reset link.";
+
+            return Redirect("/home/index");
+        }
+
+
 
         [HttpGet]
         public IActionResult Login([FromQuery] int statusCode)
