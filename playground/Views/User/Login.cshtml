@@ -6,10 +6,13 @@
 <div class="app-center">
     <div>
         <h1 class="h1-center">Welcome</h1>
-        <form class="login-form" method="post" asp-controller="User" asp-action="Login">
-            <input class="login-input" placeholder="E-Mail Address" asp-for="Email" type="text">
-            <input class="password-input" placeholder="Password" asp-for="Password" type="password">
-            <button class="login-button">Login</button>
+        <form class="form-custom" method="post" asp-controller="User" asp-action="Login">
+            <input class="input-custom" placeholder="E-Mail Address" asp-for="Email" type="text">
+            <input class="input-custom" placeholder="Password" asp-for="Password" type="password">
+            <button class="submit-button">Login</button>
+            <div class="container-forgot-password">
+                <a class="links" asp-controller="User" asp-action="ForgotPassword">Forgot password?</a>
+            </div>
         </form>
     </div>
 

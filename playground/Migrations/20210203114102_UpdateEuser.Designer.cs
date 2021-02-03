@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using playground.Data;
 
 namespace playground.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20210203114102_UpdateEuser")]
+    partial class UpdateEuser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -76,28 +78,6 @@ namespace playground.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("playground.Entities.EUserActionKeys", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<Guid>("ActionKey")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int?>("EUserid")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EUserid");
-
-                    b.ToTable("UserActionKeys");
-                });
-
             modelBuilder.Entity("playground.Entities.ERole", b =>
                 {
                     b.HasOne("playground.Entities.EUser", "EUser")
@@ -109,21 +89,9 @@ namespace playground.Migrations
                     b.Navigation("EUser");
                 });
 
-            modelBuilder.Entity("playground.Entities.EUserActionKeys", b =>
-                {
-                    b.HasOne("playground.Entities.EUser", "EUser")
-                        .WithMany("UserActionKeys")
-                        .HasForeignKey("EUserid")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.Navigation("EUser");
-                });
-
             modelBuilder.Entity("playground.Entities.EUser", b =>
                 {
                     b.Navigation("Roles");
-
-                    b.Navigation("UserActionKeys");
                 });
 #pragma warning restore 612, 618
         }
