@@ -73,7 +73,7 @@ namespace playground.Controllers
         public async Task<IActionResult> DeleteUser([FromQuery] int userId)
         {
             await _userService.DeleteUserAsync(userId);
-            return View("GetAllUsers");
+            return RedirectToAction("GetAllUsers");
         }
 
         [HttpGet]

@@ -2025,3 +2025,876 @@ WHERE changes() = 1 AND "rowid" = last_insert_rowid();
 2021-02-04 11:33:08.839 +04:00 [INF] Executed action playground.Controllers.UserController.GeneratePasswordResetLink (playground) in 4751.0281ms
 2021-02-04 11:33:08.848 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.GeneratePasswordResetLink (playground)'
 2021-02-04 11:33:08.868 +04:00 [INF] Request finished HTTP/2 POST https://localhost:5001/User/GeneratePasswordResetLink application/x-www-form-urlencoded 212 - 200 - text/html;+charset=utf-8 4808.8127ms
+2021-02-04 17:37:40.891 +04:00 [INF] User profile is available. Using 'C:\Users\mtoka\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-02-04 17:37:41.658 +04:00 [INF] Now listening on: https://localhost:5001
+2021-02-04 17:37:41.660 +04:00 [INF] Now listening on: http://localhost:5000
+2021-02-04 17:37:41.662 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-04 17:37:41.664 +04:00 [INF] Hosting environment: Development
+2021-02-04 17:37:41.665 +04:00 [INF] Content root path: C:\git\pg\playground
+2021-02-04 17:37:44.286 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/ - -
+2021-02-04 17:37:44.477 +04:00 [INF] Executing endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-04 17:37:44.537 +04:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller playground.Controllers.HomeController (playground).
+2021-02-04 17:37:45.000 +04:00 [INF] Executing action method playground.Controllers.HomeController.Index (playground) - Validation state: "Valid"
+2021-02-04 17:37:45.023 +04:00 [INF] Executed action method playground.Controllers.HomeController.Index (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.1479ms.
+2021-02-04 17:37:45.078 +04:00 [INF] Executing ViewResult, running view Index.
+2021-02-04 17:37:45.276 +04:00 [INF] Executed ViewResult - view Index executed in 225.3945ms.
+2021-02-04 17:37:45.282 +04:00 [INF] Executed action playground.Controllers.HomeController.Index (playground) in 738.2428ms
+2021-02-04 17:37:45.287 +04:00 [INF] Executed endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-04 17:37:45.303 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 1020.5519ms
+2021-02-04 17:37:45.349 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/css/site.css - -
+2021-02-04 17:37:45.360 +04:00 [INF] The file /css/site.css was not modified
+2021-02-04 17:37:45.364 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/css/site.css - - - 304 - text/css 14.4071ms
+2021-02-04 17:37:47.797 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/Login - -
+2021-02-04 17:37:47.808 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:37:47.838 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(Int32) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:37:47.883 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-04 17:37:47.885 +04:00 [INF] Executed action method playground.Controllers.UserController.Login (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3404ms.
+2021-02-04 17:37:47.902 +04:00 [INF] Executing ViewResult, running view Login.
+2021-02-04 17:37:48.012 +04:00 [INF] Executed ViewResult - view Login executed in 111.5896ms.
+2021-02-04 17:37:48.016 +04:00 [INF] Executed action playground.Controllers.UserController.Login (playground) in 171.9541ms
+2021-02-04 17:37:48.023 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:37:48.028 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/Login - - - 200 - text/html;+charset=utf-8 230.4456ms
+2021-02-04 17:37:51.376 +04:00 [INF] Request starting HTTP/2 POST https://localhost:5001/User/Login application/x-www-form-urlencoded 225
+2021-02-04 17:37:51.393 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:37:51.416 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[playground.Entities.EUser]] Login(playground.DTOs.UserToLoginDto) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:37:51.490 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-04 17:37:53.112 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:37:54.054 +04:00 [INF] Executed DbCommand (85ms) [Parameters=[@__email_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 2
+2021-02-04 17:37:54.309 +04:00 [INF] Executed action method playground.Controllers.UserController.Login (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2812.7612ms.
+2021-02-04 17:37:54.316 +04:00 [INF] Executing ViewResult, running view Login.
+2021-02-04 17:37:54.330 +04:00 [INF] Executed ViewResult - view Login executed in 14.9161ms.
+2021-02-04 17:37:54.336 +04:00 [INF] Executed action playground.Controllers.UserController.Login (playground) in 2913.0264ms
+2021-02-04 17:37:54.343 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:37:54.364 +04:00 [INF] Request finished HTTP/2 POST https://localhost:5001/User/Login application/x-www-form-urlencoded 225 - 200 - text/html;+charset=utf-8 2987.8921ms
+2021-02-04 17:38:04.214 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/ForgotPassword - -
+2021-02-04 17:38:04.220 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.ForgotPassword (playground)'
+2021-02-04 17:38:04.228 +04:00 [INF] Route matched with {action = "ForgotPassword", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ForgotPassword() on controller playground.Controllers.UserController (playground).
+2021-02-04 17:38:04.299 +04:00 [INF] Executing action method playground.Controllers.UserController.ForgotPassword (playground) - Validation state: "Valid"
+2021-02-04 17:38:04.305 +04:00 [INF] Executed action method playground.Controllers.UserController.ForgotPassword (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.4454ms.
+2021-02-04 17:38:04.315 +04:00 [INF] Executing ViewResult, running view ForgotPassword.
+2021-02-04 17:38:04.325 +04:00 [INF] Executed ViewResult - view ForgotPassword executed in 12.2641ms.
+2021-02-04 17:38:04.328 +04:00 [INF] Executed action playground.Controllers.UserController.ForgotPassword (playground) in 79.816ms
+2021-02-04 17:38:04.331 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.ForgotPassword (playground)'
+2021-02-04 17:38:04.334 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/ForgotPassword - - - 200 - text/html;+charset=utf-8 119.2156ms
+2021-02-04 17:38:07.507 +04:00 [INF] Request starting HTTP/2 POST https://localhost:5001/User/GeneratePasswordResetLink application/x-www-form-urlencoded 189
+2021-02-04 17:38:07.517 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.GeneratePasswordResetLink (playground)'
+2021-02-04 17:38:07.534 +04:00 [INF] Route matched with {action = "GeneratePasswordResetLink", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GeneratePasswordResetLink(System.String) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:38:07.593 +04:00 [INF] Executing action method playground.Controllers.UserController.GeneratePasswordResetLink (playground) - Validation state: "Valid"
+2021-02-04 17:38:07.683 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:38:07.711 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE 0
+LIMIT 2
+2021-02-04 17:38:07.727 +04:00 [WRN] Unable to find user with email: ''.
+2021-02-04 17:38:07.733 +04:00 [INF] Executed action method playground.Controllers.UserController.GeneratePasswordResetLink (playground), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 134.0988ms.
+2021-02-04 17:38:07.742 +04:00 [INF] Executing RedirectResult, redirecting to /error/showError.
+2021-02-04 17:38:07.788 +04:00 [INF] Executed action playground.Controllers.UserController.GeneratePasswordResetLink (playground) in 239.5671ms
+2021-02-04 17:38:07.794 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.GeneratePasswordResetLink (playground)'
+2021-02-04 17:38:07.803 +04:00 [INF] Request finished HTTP/2 POST https://localhost:5001/User/GeneratePasswordResetLink application/x-www-form-urlencoded 189 - 302 0 - 297.1650ms
+2021-02-04 17:38:10.713 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/error/showError - -
+2021-02-04 17:38:10.722 +04:00 [INF] Executing endpoint 'playground.Controllers.ErrorController.ShowError (playground)'
+2021-02-04 17:38:10.741 +04:00 [INF] Route matched with {action = "ShowError", controller = "Error"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ShowError(Int32) on controller playground.Controllers.ErrorController (playground).
+2021-02-04 17:38:10.854 +04:00 [INF] Executing action method playground.Controllers.ErrorController.ShowError (playground) - Validation state: "Valid"
+2021-02-04 17:38:10.861 +04:00 [INF] Executed action method playground.Controllers.ErrorController.ShowError (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.0198ms.
+2021-02-04 17:38:10.866 +04:00 [INF] Executing ViewResult, running view ShowError.
+2021-02-04 17:38:10.876 +04:00 [INF] Executed ViewResult - view ShowError executed in 11.4931ms.
+2021-02-04 17:38:10.882 +04:00 [INF] Executed action playground.Controllers.ErrorController.ShowError (playground) in 108.4703ms
+2021-02-04 17:38:10.891 +04:00 [INF] Executed endpoint 'playground.Controllers.ErrorController.ShowError (playground)'
+2021-02-04 17:38:10.894 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/error/showError - - - 200 - text/html;+charset=utf-8 181.4660ms
+2021-02-04 17:38:14.276 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/Login - -
+2021-02-04 17:38:14.278 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:38:14.283 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(Int32) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:38:14.319 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-04 17:38:14.322 +04:00 [INF] Executed action method playground.Controllers.UserController.Login (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.025ms.
+2021-02-04 17:38:14.328 +04:00 [INF] Executing ViewResult, running view Login.
+2021-02-04 17:38:14.333 +04:00 [INF] Executed ViewResult - view Login executed in 5.4136ms.
+2021-02-04 17:38:14.338 +04:00 [INF] Executed action playground.Controllers.UserController.Login (playground) in 49.5184ms
+2021-02-04 17:38:14.346 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:38:14.350 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/Login - - - 200 - text/html;+charset=utf-8 74.3584ms
+2021-02-04 17:38:15.626 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/ForgotPassword - -
+2021-02-04 17:38:15.629 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.ForgotPassword (playground)'
+2021-02-04 17:38:15.633 +04:00 [INF] Route matched with {action = "ForgotPassword", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ForgotPassword() on controller playground.Controllers.UserController (playground).
+2021-02-04 17:38:15.691 +04:00 [INF] Executing action method playground.Controllers.UserController.ForgotPassword (playground) - Validation state: "Valid"
+2021-02-04 17:38:15.697 +04:00 [INF] Executed action method playground.Controllers.UserController.ForgotPassword (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0297ms.
+2021-02-04 17:38:15.707 +04:00 [INF] Executing ViewResult, running view ForgotPassword.
+2021-02-04 17:38:15.712 +04:00 [INF] Executed ViewResult - view ForgotPassword executed in 5.1024ms.
+2021-02-04 17:38:15.716 +04:00 [INF] Executed action playground.Controllers.UserController.ForgotPassword (playground) in 67.5808ms
+2021-02-04 17:38:15.724 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.ForgotPassword (playground)'
+2021-02-04 17:38:15.729 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/ForgotPassword - - - 200 - text/html;+charset=utf-8 103.6117ms
+2021-02-04 17:38:22.713 +04:00 [INF] Request starting HTTP/2 POST https://localhost:5001/User/GeneratePasswordResetLink application/x-www-form-urlencoded 212
+2021-02-04 17:38:22.720 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.GeneratePasswordResetLink (playground)'
+2021-02-04 17:38:22.724 +04:00 [INF] Route matched with {action = "GeneratePasswordResetLink", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GeneratePasswordResetLink(System.String) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:38:22.796 +04:00 [INF] Executing action method playground.Controllers.UserController.GeneratePasswordResetLink (playground) - Validation state: "Valid"
+2021-02-04 17:38:22.819 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:38:22.836 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 21)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 2
+2021-02-04 17:38:23.272 +04:00 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "UserActionKeys" ("ActionKey", "CreatedUTC", "EUserid", "UserId")
+VALUES (@p0, @p1, @p2, @p3);
+SELECT "Id"
+FROM "UserActionKeys"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2021-02-04 17:38:23.384 +04:00 [INF] New key for user 'm.tokarev@hotmail.com' has been generated.
+2021-02-04 17:38:25.757 +04:00 [INF] Mail has been submitted. 
+                    Sent From: 'NoReply@eas.az'
+                    Message Subject: 'Password reset requested'.
+                    To: m.tokarev@hotmail.com
+                    
+                    
+2021-02-04 17:38:25.765 +04:00 [INF] Executed action method playground.Controllers.UserController.GeneratePasswordResetLink (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2963.7872ms.
+2021-02-04 17:38:25.776 +04:00 [INF] Executing ViewResult, running view login.
+2021-02-04 17:38:25.784 +04:00 [INF] Executed ViewResult - view login executed in 8.8933ms.
+2021-02-04 17:38:25.792 +04:00 [INF] Executed action playground.Controllers.UserController.GeneratePasswordResetLink (playground) in 3047.867ms
+2021-02-04 17:38:25.803 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.GeneratePasswordResetLink (playground)'
+2021-02-04 17:38:25.810 +04:00 [INF] Request finished HTTP/2 POST https://localhost:5001/User/GeneratePasswordResetLink application/x-www-form-urlencoded 212 - 200 - text/html;+charset=utf-8 3097.2412ms
+2021-02-04 17:39:01.141 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/user/passwordReset?key=4647f1b5-cbcc-4367-9643-064d6552957b - -
+2021-02-04 17:39:01.631 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:39:01.635 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.PasswordReset (playground)'
+2021-02-04 17:39:01.643 +04:00 [INF] Route matched with {action = "PasswordReset", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PasswordReset(System.String) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:39:01.684 +04:00 [INF] Executing action method playground.Controllers.UserController.PasswordReset (playground) - Validation state: "Valid"
+2021-02-04 17:39:01.695 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:39:01.720 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."ActionKey", "u"."CreatedUTC", "u"."EUserid", "u"."UserId"
+FROM "UserActionKeys" AS "u"
+WHERE "u"."ActionKey" = @__key_0
+LIMIT 2
+2021-02-04 17:39:01.733 +04:00 [INF] Password reset key was accessed: '4647f1b5-cbcc-4367-9643-064d6552957b'
+2021-02-04 17:39:01.743 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."id" = @__id_0
+LIMIT 2
+2021-02-04 17:39:01.763 +04:00 [INF] Executed action method playground.Controllers.UserController.PasswordReset (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 73.4382ms.
+2021-02-04 17:39:01.772 +04:00 [INF] Executing ViewResult, running view PasswordReset.
+2021-02-04 17:39:01.797 +04:00 [INF] Executed ViewResult - view PasswordReset executed in 26.4743ms.
+2021-02-04 17:39:01.802 +04:00 [INF] Executed action playground.Controllers.UserController.PasswordReset (playground) in 151.8153ms
+2021-02-04 17:39:01.805 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.PasswordReset (playground)'
+2021-02-04 17:39:01.811 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/user/passwordReset?key=4647f1b5-cbcc-4367-9643-064d6552957b - - - 200 - text/html;+charset=utf-8 669.9912ms
+2021-02-04 17:39:01.891 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/css/site.css - -
+2021-02-04 17:39:01.894 +04:00 [INF] The file /css/site.css was not modified
+2021-02-04 17:39:01.896 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/css/site.css - - - 304 - text/css 5.1524ms
+2021-02-04 17:39:07.869 +04:00 [INF] Request starting HTTP/2 POST https://localhost:5001/User/PasswordReset application/x-www-form-urlencoded 320
+2021-02-04 17:39:07.873 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:39:07.875 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.PasswordReset (playground)'
+2021-02-04 17:39:07.889 +04:00 [INF] Route matched with {action = "PasswordReset", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PasswordReset(playground.DTOs.PasswordResetDto) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:39:07.943 +04:00 [INF] Executing action method playground.Controllers.UserController.PasswordReset (playground) - Validation state: "Valid"
+2021-02-04 17:39:07.953 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:39:07.964 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__key_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."ActionKey", "u"."CreatedUTC", "u"."EUserid", "u"."UserId"
+FROM "UserActionKeys" AS "u"
+WHERE "u"."ActionKey" = @__key_0
+LIMIT 2
+2021-02-04 17:39:08.002 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?'], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "UserActionKeys"
+WHERE "Id" = @p0;
+SELECT changes();
+2021-02-04 17:39:08.037 +04:00 [INF] Password reset key was accessed: '4647f1b5-cbcc-4367-9643-064d6552957b'
+2021-02-04 17:39:08.043 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 21)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 2
+2021-02-04 17:39:08.059 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?', @p0='?', @p1='?' (Size = 64), @p2='?' (Size = 128)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "LastUpdatedUTC" = @p0, "PasswordHash" = @p1, "PasswordSalt" = @p2
+WHERE "id" = @p3;
+SELECT changes();
+2021-02-04 17:39:08.074 +04:00 [INF] Password for user: 'm.tokarev@hotmail.com' has been update.
+2021-02-04 17:39:08.075 +04:00 [INF] Executed action method playground.Controllers.UserController.PasswordReset (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 124.7114ms.
+2021-02-04 17:39:08.086 +04:00 [INF] Executing ViewResult, running view login.
+2021-02-04 17:39:08.089 +04:00 [INF] Executed ViewResult - view login executed in 3.4293ms.
+2021-02-04 17:39:08.094 +04:00 [INF] Executed action playground.Controllers.UserController.PasswordReset (playground) in 194.0548ms
+2021-02-04 17:39:08.098 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.PasswordReset (playground)'
+2021-02-04 17:39:08.102 +04:00 [INF] Request finished HTTP/2 POST https://localhost:5001/User/PasswordReset application/x-www-form-urlencoded 320 - 200 - text/html;+charset=utf-8 233.4154ms
+2021-02-04 17:39:15.508 +04:00 [INF] Request starting HTTP/2 POST https://localhost:5001/User/Login application/x-www-form-urlencoded 276
+2021-02-04 17:39:15.511 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:39:15.513 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:39:15.517 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[playground.Entities.EUser]] Login(playground.DTOs.UserToLoginDto) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:39:15.564 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-04 17:39:15.568 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:39:15.579 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 21)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 2
+2021-02-04 17:39:15.608 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@p2='?', @p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "LastLoginUTC" = @p0, "LoginsCount" = @p1
+WHERE "id" = @p2;
+SELECT changes();
+2021-02-04 17:39:15.670 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "r"."Id", "r"."EUserId", "r"."Role"
+FROM "Roles" AS "r"
+WHERE "r"."EUserId" = @__userId_0
+2021-02-04 17:39:15.734 +04:00 [INF] Executed action method playground.Controllers.UserController.Login (playground), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 166.5332ms.
+2021-02-04 17:39:15.742 +04:00 [INF] Executing RedirectResult, redirecting to /user/getAllUsers.
+2021-02-04 17:39:15.745 +04:00 [INF] Executed action playground.Controllers.UserController.Login (playground) in 219.7575ms
+2021-02-04 17:39:15.748 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:39:15.756 +04:00 [INF] Request finished HTTP/2 POST https://localhost:5001/User/Login application/x-www-form-urlencoded 276 - 302 0 - 248.2809ms
+2021-02-04 17:39:15.762 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/user/getAllUsers - -
+2021-02-04 17:39:15.765 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:39:15.774 +04:00 [INF] Authorization was successful.
+2021-02-04 17:39:15.777 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.GetAllUsers (playground)'
+2021-02-04 17:39:15.788 +04:00 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[playground.Entities.EUser]]] GetAllUsers() on controller playground.Controllers.UserController (playground).
+2021-02-04 17:39:15.839 +04:00 [INF] Executing action method playground.Controllers.UserController.GetAllUsers (playground) - Validation state: "Valid"
+2021-02-04 17:39:15.850 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:39:15.868 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+2021-02-04 17:39:15.878 +04:00 [INF] Executed action method playground.Controllers.UserController.GetAllUsers (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 33.3933ms.
+2021-02-04 17:39:15.891 +04:00 [INF] Executing ViewResult, running view User.
+2021-02-04 17:39:15.910 +04:00 [INF] Executed ViewResult - view User executed in 21.4352ms.
+2021-02-04 17:39:15.914 +04:00 [INF] Executed action playground.Controllers.UserController.GetAllUsers (playground) in 119.9087ms
+2021-02-04 17:39:15.921 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.GetAllUsers (playground)'
+2021-02-04 17:39:15.929 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/user/getAllUsers - - - 200 - text/html;+charset=utf-8 167.8111ms
+2021-02-04 17:39:18.708 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/DeleteUser?userId=11 - -
+2021-02-04 17:39:18.712 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:39:18.721 +04:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Administrator)
+2021-02-04 17:39:18.728 +04:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2021-02-04 17:39:18.735 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/DeleteUser?userId=11 - - - 302 0 - 27.0246ms
+2021-02-04 17:39:18.741 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/error/showError?errorCode=403 - -
+2021-02-04 17:39:18.744 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:39:18.746 +04:00 [INF] Executing endpoint 'playground.Controllers.ErrorController.ShowError (playground)'
+2021-02-04 17:39:18.754 +04:00 [INF] Route matched with {action = "ShowError", controller = "Error"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ShowError(Int32) on controller playground.Controllers.ErrorController (playground).
+2021-02-04 17:39:18.800 +04:00 [INF] Executing action method playground.Controllers.ErrorController.ShowError (playground) - Validation state: "Valid"
+2021-02-04 17:39:18.805 +04:00 [INF] Executed action method playground.Controllers.ErrorController.ShowError (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.035ms.
+2021-02-04 17:39:18.810 +04:00 [INF] Executing ViewResult, running view ShowError.
+2021-02-04 17:39:18.822 +04:00 [INF] Executed ViewResult - view ShowError executed in 11.9023ms.
+2021-02-04 17:39:18.830 +04:00 [INF] Executed action playground.Controllers.ErrorController.ShowError (playground) in 69.3092ms
+2021-02-04 17:39:18.836 +04:00 [INF] Executed endpoint 'playground.Controllers.ErrorController.ShowError (playground)'
+2021-02-04 17:39:18.841 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/error/showError?errorCode=403 - - - 200 - text/html;+charset=utf-8 100.4858ms
+2021-02-04 17:39:22.175 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/Login - -
+2021-02-04 17:39:22.177 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:39:22.179 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:39:22.182 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(Int32) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:39:22.218 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-04 17:39:22.222 +04:00 [INF] Executed action method playground.Controllers.UserController.Login (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0323ms.
+2021-02-04 17:39:22.227 +04:00 [INF] Executing ViewResult, running view Login.
+2021-02-04 17:39:22.235 +04:00 [INF] Executed ViewResult - view Login executed in 7.6076ms.
+2021-02-04 17:39:22.240 +04:00 [INF] Executed action playground.Controllers.UserController.Login (playground) in 53.4896ms
+2021-02-04 17:39:22.245 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:39:22.253 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/Login - - - 200 - text/html;+charset=utf-8 77.9533ms
+2021-02-04 17:39:32.394 +04:00 [INF] Request starting HTTP/2 POST https://localhost:5001/User/Login application/x-www-form-urlencoded 267
+2021-02-04 17:39:32.397 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:39:32.399 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:39:32.402 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[playground.Entities.EUser]] Login(playground.DTOs.UserToLoginDto) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:39:32.454 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-04 17:39:32.459 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:39:32.474 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 2
+2021-02-04 17:39:32.495 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p2='?', @p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "LastLoginUTC" = @p0, "LoginsCount" = @p1
+WHERE "id" = @p2;
+SELECT changes();
+2021-02-04 17:39:32.515 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "r"."Id", "r"."EUserId", "r"."Role"
+FROM "Roles" AS "r"
+WHERE "r"."EUserId" = @__userId_0
+2021-02-04 17:39:32.528 +04:00 [INF] Executed action method playground.Controllers.UserController.Login (playground), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 69.4213ms.
+2021-02-04 17:39:32.535 +04:00 [INF] Executing RedirectResult, redirecting to /user/getAllUsers.
+2021-02-04 17:39:32.542 +04:00 [INF] Executed action playground.Controllers.UserController.Login (playground) in 133.4698ms
+2021-02-04 17:39:32.551 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:39:32.559 +04:00 [INF] Request finished HTTP/2 POST https://localhost:5001/User/Login application/x-www-form-urlencoded 267 - 302 0 - 164.9231ms
+2021-02-04 17:39:32.568 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/user/getAllUsers - -
+2021-02-04 17:39:32.575 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:39:32.583 +04:00 [INF] Authorization was successful.
+2021-02-04 17:39:32.589 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.GetAllUsers (playground)'
+2021-02-04 17:39:32.600 +04:00 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[playground.Entities.EUser]]] GetAllUsers() on controller playground.Controllers.UserController (playground).
+2021-02-04 17:39:32.679 +04:00 [INF] Executing action method playground.Controllers.UserController.GetAllUsers (playground) - Validation state: "Valid"
+2021-02-04 17:39:32.683 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:39:32.691 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+2021-02-04 17:39:32.699 +04:00 [INF] Executed action method playground.Controllers.UserController.GetAllUsers (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 16.6504ms.
+2021-02-04 17:39:32.705 +04:00 [INF] Executing ViewResult, running view User.
+2021-02-04 17:39:32.709 +04:00 [INF] Executed ViewResult - view User executed in 4.1972ms.
+2021-02-04 17:39:32.714 +04:00 [INF] Executed action playground.Controllers.UserController.GetAllUsers (playground) in 102.0126ms
+2021-02-04 17:39:32.717 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.GetAllUsers (playground)'
+2021-02-04 17:39:32.720 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/user/getAllUsers - - - 200 - text/html;+charset=utf-8 151.6102ms
+2021-02-04 17:39:36.772 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/DeleteUser?userId=12 - -
+2021-02-04 17:39:36.785 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:39:36.791 +04:00 [INF] Authorization was successful.
+2021-02-04 17:39:36.813 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.DeleteUser (playground)'
+2021-02-04 17:39:36.847 +04:00 [INF] Route matched with {action = "DeleteUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteUser(Int32) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:39:36.906 +04:00 [INF] Executing action method playground.Controllers.UserController.DeleteUser (playground) - Validation state: "Valid"
+2021-02-04 17:39:36.917 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:39:36.931 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."id" = @__id_0
+LIMIT 2
+2021-02-04 17:39:36.959 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?'], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Users"
+WHERE "id" = @p0;
+SELECT changes();
+2021-02-04 17:39:36.978 +04:00 [INF] Executed action method playground.Controllers.UserController.DeleteUser (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 66.7414ms.
+2021-02-04 17:39:36.988 +04:00 [INF] Executing ViewResult, running view GetAllUsers.
+2021-02-04 17:39:36.996 +04:00 [ERR] The view 'GetAllUsers' was not found. Searched locations: ["/Views/User/GetAllUsers.cshtml","/Views/Shared/GetAllUsers.cshtml"]
+2021-02-04 17:39:37.027 +04:00 [INF] Executed action playground.Controllers.UserController.DeleteUser (playground) in 168.7379ms
+2021-02-04 17:39:37.031 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.DeleteUser (playground)'
+2021-02-04 17:39:37.038 +04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'GetAllUsers' was not found. The following locations were searched:
+/Views/User/GetAllUsers.cshtml
+/Views/Shared/GetAllUsers.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|21_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-02-04 17:39:37.271 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/DeleteUser?userId=12 - - - 500 - text/html;+charset=utf-8 499.0742ms
+2021-02-04 17:42:47.043 +04:00 [INF] User profile is available. Using 'C:\Users\mtoka\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-02-04 17:42:47.684 +04:00 [INF] Now listening on: https://localhost:5001
+2021-02-04 17:42:47.697 +04:00 [INF] Now listening on: http://localhost:5000
+2021-02-04 17:42:47.699 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-04 17:42:47.700 +04:00 [INF] Hosting environment: Development
+2021-02-04 17:42:47.701 +04:00 [INF] Content root path: C:\git\pg\playground
+2021-02-04 17:42:50.104 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/ - -
+2021-02-04 17:42:50.264 +04:00 [INF] Executing endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-04 17:42:50.321 +04:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller playground.Controllers.HomeController (playground).
+2021-02-04 17:42:50.602 +04:00 [INF] Executing action method playground.Controllers.HomeController.Index (playground) - Validation state: "Valid"
+2021-02-04 17:42:50.613 +04:00 [INF] Executed action method playground.Controllers.HomeController.Index (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.6855ms.
+2021-02-04 17:42:50.645 +04:00 [INF] Executing ViewResult, running view Index.
+2021-02-04 17:42:50.783 +04:00 [INF] Executed ViewResult - view Index executed in 149.9892ms.
+2021-02-04 17:42:50.788 +04:00 [INF] Executed action playground.Controllers.HomeController.Index (playground) in 462.0355ms
+2021-02-04 17:42:50.790 +04:00 [INF] Executed endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-04 17:42:50.804 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 702.0568ms
+2021-02-04 17:43:17.690 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/Login - -
+2021-02-04 17:43:17.702 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:43:17.723 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(Int32) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:43:17.769 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-04 17:43:17.772 +04:00 [INF] Executed action method playground.Controllers.UserController.Login (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.311ms.
+2021-02-04 17:43:17.775 +04:00 [INF] Executing ViewResult, running view Login.
+2021-02-04 17:43:17.826 +04:00 [INF] Executed ViewResult - view Login executed in 51.1245ms.
+2021-02-04 17:43:17.839 +04:00 [INF] Executed action playground.Controllers.UserController.Login (playground) in 112.2383ms
+2021-02-04 17:43:17.842 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:43:17.845 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/Login - - - 200 - text/html;+charset=utf-8 154.5910ms
+2021-02-04 17:43:18.822 +04:00 [INF] Request starting HTTP/2 POST https://localhost:5001/User/Login application/x-www-form-urlencoded 224
+2021-02-04 17:43:18.839 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:43:18.873 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[playground.Entities.EUser]] Login(playground.DTOs.UserToLoginDto) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:43:18.946 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-04 17:43:19.816 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:43:20.348 +04:00 [INF] Executed DbCommand (27ms) [Parameters=[@__email_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 2
+2021-02-04 17:43:20.563 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@p2='?', @p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "LastLoginUTC" = @p0, "LoginsCount" = @p1
+WHERE "id" = @p2;
+SELECT changes();
+2021-02-04 17:43:20.615 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "r"."Id", "r"."EUserId", "r"."Role"
+FROM "Roles" AS "r"
+WHERE "r"."EUserId" = @__userId_0
+2021-02-04 17:43:20.890 +04:00 [INF] Executed action method playground.Controllers.UserController.Login (playground), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 1939.032ms.
+2021-02-04 17:43:20.899 +04:00 [INF] Executing RedirectResult, redirecting to /User/getAllUsers.
+2021-02-04 17:43:20.905 +04:00 [INF] Executed action playground.Controllers.UserController.Login (playground) in 2020.1724ms
+2021-02-04 17:43:20.910 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:43:20.919 +04:00 [INF] Request finished HTTP/2 POST https://localhost:5001/User/Login application/x-www-form-urlencoded 224 - 302 0 - 2097.4071ms
+2021-02-04 17:43:22.085 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/getAllUsers - -
+2021-02-04 17:43:22.223 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:43:22.235 +04:00 [INF] Authorization was successful.
+2021-02-04 17:43:22.238 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.GetAllUsers (playground)'
+2021-02-04 17:43:22.247 +04:00 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[playground.Entities.EUser]]] GetAllUsers() on controller playground.Controllers.UserController (playground).
+2021-02-04 17:43:22.287 +04:00 [INF] Executing action method playground.Controllers.UserController.GetAllUsers (playground) - Validation state: "Valid"
+2021-02-04 17:43:22.323 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:43:22.337 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+2021-02-04 17:43:22.348 +04:00 [INF] Executed action method playground.Controllers.UserController.GetAllUsers (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 57.546ms.
+2021-02-04 17:43:22.355 +04:00 [INF] Executing ViewResult, running view User.
+2021-02-04 17:43:22.365 +04:00 [INF] Executed ViewResult - view User executed in 10.66ms.
+2021-02-04 17:43:22.368 +04:00 [INF] Executed action playground.Controllers.UserController.GetAllUsers (playground) in 115.1032ms
+2021-02-04 17:43:22.375 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.GetAllUsers (playground)'
+2021-02-04 17:43:22.378 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/getAllUsers - - - 200 - text/html;+charset=utf-8 292.9207ms
+2021-02-04 17:43:35.240 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/ - -
+2021-02-04 17:43:35.257 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:43:35.276 +04:00 [INF] Executing endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-04 17:43:35.304 +04:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller playground.Controllers.HomeController (playground).
+2021-02-04 17:43:35.350 +04:00 [INF] Executing action method playground.Controllers.HomeController.Index (playground) - Validation state: "Valid"
+2021-02-04 17:43:35.354 +04:00 [INF] Executed action method playground.Controllers.HomeController.Index (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0447ms.
+2021-02-04 17:43:35.358 +04:00 [INF] Executing ViewResult, running view Index.
+2021-02-04 17:43:35.361 +04:00 [INF] Executed ViewResult - view Index executed in 3.8997ms.
+2021-02-04 17:43:35.364 +04:00 [INF] Executed action playground.Controllers.HomeController.Index (playground) in 48.4387ms
+2021-02-04 17:43:35.367 +04:00 [INF] Executed endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-04 17:43:35.369 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 129.3713ms
+2021-02-04 17:43:36.677 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/Register - -
+2021-02-04 17:43:36.684 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:43:36.688 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Register (playground)'
+2021-02-04 17:43:36.702 +04:00 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller playground.Controllers.UserController (playground).
+2021-02-04 17:43:36.772 +04:00 [INF] Executing action method playground.Controllers.UserController.Register (playground) - Validation state: "Valid"
+2021-02-04 17:43:36.775 +04:00 [INF] Executed action method playground.Controllers.UserController.Register (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.454ms.
+2021-02-04 17:43:36.782 +04:00 [INF] Executing ViewResult, running view Register.
+2021-02-04 17:43:36.798 +04:00 [INF] Executed ViewResult - view Register executed in 16.7125ms.
+2021-02-04 17:43:36.801 +04:00 [INF] Executed action playground.Controllers.UserController.Register (playground) in 83.7245ms
+2021-02-04 17:43:36.804 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Register (playground)'
+2021-02-04 17:43:36.806 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/Register - - - 200 - text/html;+charset=utf-8 129.1788ms
+2021-02-04 17:43:43.082 +04:00 [INF] Request starting HTTP/2 POST https://localhost:5001/User/Register application/x-www-form-urlencoded 301
+2021-02-04 17:43:43.090 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:43:43.094 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Register (playground)'
+2021-02-04 17:43:43.112 +04:00 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[playground.DTOs.UserWithTokenDto]] Register(playground.DTOs.UserToRegisterDto) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:43:43.171 +04:00 [INF] Executing action method playground.Controllers.UserController.Register (playground) - Validation state: "Valid"
+2021-02-04 17:43:43.200 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:43:43.250 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__ToLower_0='?' (Size = 14)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Users" AS "u"
+    WHERE "u"."Email" = @__ToLower_0)
+2021-02-04 17:43:43.356 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?', @p1='?' (Size = 14), @p2='?' (Size = 7), @p3='?', @p4='?' (Size = 7), @p5='?', @p6='?', @p7='?' (Size = 64), @p8='?' (Size = 128)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("CreatedUTC", "Email", "FirstName", "LastLoginUTC", "LastName", "LastUpdatedUTC", "LoginsCount", "PasswordHash", "PasswordSalt")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT "id"
+FROM "Users"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2021-02-04 17:43:43.472 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Roles" ("EUserId", "Role")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Roles"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2021-02-04 17:43:43.504 +04:00 [INF] Executed action method playground.Controllers.UserController.Register (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 327.1278ms.
+2021-02-04 17:43:43.512 +04:00 [INF] Executing ViewResult, running view UserCreatedSuccesfully.
+2021-02-04 17:43:43.525 +04:00 [INF] Executed ViewResult - view UserCreatedSuccesfully executed in 14.1342ms.
+2021-02-04 17:43:43.528 +04:00 [INF] Executed action playground.Controllers.UserController.Register (playground) in 404.7757ms
+2021-02-04 17:43:43.540 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Register (playground)'
+2021-02-04 17:43:43.546 +04:00 [INF] Request finished HTTP/2 POST https://localhost:5001/User/Register application/x-www-form-urlencoded 301 - 200 - text/html;+charset=utf-8 464.1137ms
+2021-02-04 17:43:47.331 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/GetAllUsers - -
+2021-02-04 17:43:47.339 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:43:47.359 +04:00 [INF] Authorization was successful.
+2021-02-04 17:43:47.374 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.GetAllUsers (playground)'
+2021-02-04 17:43:47.386 +04:00 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[playground.Entities.EUser]]] GetAllUsers() on controller playground.Controllers.UserController (playground).
+2021-02-04 17:43:47.422 +04:00 [INF] Executing action method playground.Controllers.UserController.GetAllUsers (playground) - Validation state: "Valid"
+2021-02-04 17:43:47.430 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:43:47.447 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+2021-02-04 17:43:47.455 +04:00 [INF] Executed action method playground.Controllers.UserController.GetAllUsers (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 26.3547ms.
+2021-02-04 17:43:47.463 +04:00 [INF] Executing ViewResult, running view User.
+2021-02-04 17:43:47.466 +04:00 [INF] Executed ViewResult - view User executed in 3.7961ms.
+2021-02-04 17:43:47.469 +04:00 [INF] Executed action playground.Controllers.UserController.GetAllUsers (playground) in 78.0488ms
+2021-02-04 17:43:47.473 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.GetAllUsers (playground)'
+2021-02-04 17:43:47.476 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/GetAllUsers - - - 200 - text/html;+charset=utf-8 145.4404ms
+2021-02-04 17:43:49.335 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/DeleteUser?userId=13 - -
+2021-02-04 17:43:49.344 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:43:49.367 +04:00 [INF] Authorization was successful.
+2021-02-04 17:43:49.379 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.DeleteUser (playground)'
+2021-02-04 17:43:49.414 +04:00 [INF] Route matched with {action = "DeleteUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteUser(Int32) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:43:49.483 +04:00 [INF] Executing action method playground.Controllers.UserController.DeleteUser (playground) - Validation state: "Valid"
+2021-02-04 17:43:49.492 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:43:49.503 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."id" = @__id_0
+LIMIT 2
+2021-02-04 17:43:49.521 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?'], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Users"
+WHERE "id" = @p0;
+SELECT changes();
+2021-02-04 17:43:49.537 +04:00 [INF] Executed action method playground.Controllers.UserController.DeleteUser (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 48.7357ms.
+2021-02-04 17:43:49.541 +04:00 [INF] Executing ViewResult, running view GetAllUsers.
+2021-02-04 17:43:49.545 +04:00 [ERR] The view 'GetAllUsers' was not found. Searched locations: ["/Views/User/GetAllUsers.cshtml","/Views/Shared/GetAllUsers.cshtml"]
+2021-02-04 17:43:49.560 +04:00 [INF] Executed action playground.Controllers.UserController.DeleteUser (playground) in 124.4953ms
+2021-02-04 17:43:49.566 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.DeleteUser (playground)'
+2021-02-04 17:43:49.570 +04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'GetAllUsers' was not found. The following locations were searched:
+/Views/User/GetAllUsers.cshtml
+/Views/Shared/GetAllUsers.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|21_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-02-04 17:43:49.670 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/DeleteUser?userId=13 - - - 500 - text/html;+charset=utf-8 335.0843ms
+2021-02-04 17:44:01.401 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/DeleteUser?userId=13 - -
+2021-02-04 17:44:01.414 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:44:01.421 +04:00 [INF] Authorization was successful.
+2021-02-04 17:44:01.433 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.DeleteUser (playground)'
+2021-02-04 17:44:01.448 +04:00 [INF] Route matched with {action = "DeleteUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteUser(Int32) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:44:01.525 +04:00 [INF] Executing action method playground.Controllers.UserController.DeleteUser (playground) - Validation state: "Valid"
+2021-02-04 17:44:01.543 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:44:01.571 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."id" = @__id_0
+LIMIT 2
+2021-02-04 17:44:01.788 +04:00 [INF] Executed action playground.Controllers.UserController.DeleteUser (playground) in 310.809ms
+2021-02-04 17:44:01.791 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.DeleteUser (playground)'
+2021-02-04 17:44:01.794 +04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 'entity')
+   at Microsoft.EntityFrameworkCore.Utilities.Check.NotNull[T](T value, String parameterName)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Remove(TEntity entity)
+   at playground.Services.UserService.DeleteUserAsync(Int32 id) in C:\git\pg\playground\Services\UserService.cs:line 85
+   at playground.Controllers.UserController.DeleteUser(Int32 userId) in C:\git\pg\playground\Controllers\UserController.cs:line 75
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-02-04 17:44:01.872 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/DeleteUser?userId=13 - - - 500 - text/html;+charset=utf-8 471.0863ms
+2021-02-04 17:44:04.749 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/favicon.ico - -
+2021-02-04 17:44:04.774 +04:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\git\pg\playground\wwwroot\favicon.ico'
+2021-02-04 17:44:04.779 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/favicon.ico - - - 200 5430 image/x-icon 30.0712ms
+2021-02-04 17:44:07.670 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/Register - -
+2021-02-04 17:44:07.676 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:44:07.685 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Register (playground)'
+2021-02-04 17:44:07.711 +04:00 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller playground.Controllers.UserController (playground).
+2021-02-04 17:44:07.771 +04:00 [INF] Executing action method playground.Controllers.UserController.Register (playground) - Validation state: "Valid"
+2021-02-04 17:44:07.775 +04:00 [INF] Executed action method playground.Controllers.UserController.Register (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0286ms.
+2021-02-04 17:44:07.779 +04:00 [INF] Executing ViewResult, running view Register.
+2021-02-04 17:44:07.784 +04:00 [INF] Executed ViewResult - view Register executed in 5.4744ms.
+2021-02-04 17:44:07.789 +04:00 [INF] Executed action playground.Controllers.UserController.Register (playground) in 56.0668ms
+2021-02-04 17:44:07.792 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Register (playground)'
+2021-02-04 17:44:07.796 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/Register - - - 200 - text/html;+charset=utf-8 126.0149ms
+2021-02-04 17:44:10.875 +04:00 [INF] Request starting HTTP/2 POST https://localhost:5001/User/Register application/x-www-form-urlencoded 301
+2021-02-04 17:44:10.878 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:44:10.880 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Register (playground)'
+2021-02-04 17:44:10.887 +04:00 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[playground.DTOs.UserWithTokenDto]] Register(playground.DTOs.UserToRegisterDto) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:44:10.921 +04:00 [INF] Executing action method playground.Controllers.UserController.Register (playground) - Validation state: "Valid"
+2021-02-04 17:44:10.925 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:44:10.932 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__ToLower_0='?' (Size = 14)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Users" AS "u"
+    WHERE "u"."Email" = @__ToLower_0)
+2021-02-04 17:44:10.941 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?' (Size = 14), @p2='?' (Size = 7), @p3='?', @p4='?' (Size = 7), @p5='?', @p6='?', @p7='?' (Size = 64), @p8='?' (Size = 128)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("CreatedUTC", "Email", "FirstName", "LastLoginUTC", "LastName", "LastUpdatedUTC", "LoginsCount", "PasswordHash", "PasswordSalt")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT "id"
+FROM "Users"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2021-02-04 17:44:10.956 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Roles" ("EUserId", "Role")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Roles"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2021-02-04 17:44:10.967 +04:00 [INF] Executed action method playground.Controllers.UserController.Register (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 42.8471ms.
+2021-02-04 17:44:10.971 +04:00 [INF] Executing ViewResult, running view UserCreatedSuccesfully.
+2021-02-04 17:44:10.974 +04:00 [INF] Executed ViewResult - view UserCreatedSuccesfully executed in 2.8509ms.
+2021-02-04 17:44:10.979 +04:00 [INF] Executed action playground.Controllers.UserController.Register (playground) in 87.8285ms
+2021-02-04 17:44:10.984 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Register (playground)'
+2021-02-04 17:44:10.986 +04:00 [INF] Request finished HTTP/2 POST https://localhost:5001/User/Register application/x-www-form-urlencoded 301 - 200 - text/html;+charset=utf-8 111.7155ms
+2021-02-04 17:44:13.872 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/GetAllUsers - -
+2021-02-04 17:44:13.884 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:44:13.897 +04:00 [INF] Authorization was successful.
+2021-02-04 17:44:13.900 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.GetAllUsers (playground)'
+2021-02-04 17:44:13.904 +04:00 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[playground.Entities.EUser]]] GetAllUsers() on controller playground.Controllers.UserController (playground).
+2021-02-04 17:44:13.942 +04:00 [INF] Executing action method playground.Controllers.UserController.GetAllUsers (playground) - Validation state: "Valid"
+2021-02-04 17:44:13.947 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:44:13.953 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+2021-02-04 17:44:13.961 +04:00 [INF] Executed action method playground.Controllers.UserController.GetAllUsers (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 13.5132ms.
+2021-02-04 17:44:13.965 +04:00 [INF] Executing ViewResult, running view User.
+2021-02-04 17:44:13.968 +04:00 [INF] Executed ViewResult - view User executed in 2.4833ms.
+2021-02-04 17:44:13.972 +04:00 [INF] Executed action playground.Controllers.UserController.GetAllUsers (playground) in 59.8227ms
+2021-02-04 17:44:13.976 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.GetAllUsers (playground)'
+2021-02-04 17:44:13.979 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/GetAllUsers - - - 200 - text/html;+charset=utf-8 107.4436ms
+2021-02-04 17:44:32.803 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/DeleteUser?userId=14 - -
+2021-02-04 17:44:32.819 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:44:32.838 +04:00 [INF] Authorization was successful.
+2021-02-04 17:44:32.845 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.DeleteUser (playground)'
+2021-02-04 17:44:32.851 +04:00 [INF] Route matched with {action = "DeleteUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteUser(Int32) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:44:32.909 +04:00 [INF] Executing action method playground.Controllers.UserController.DeleteUser (playground) - Validation state: "Valid"
+2021-02-04 17:44:32.915 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:44:32.926 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."id" = @__id_0
+LIMIT 2
+2021-02-04 17:44:32.937 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?'], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Users"
+WHERE "id" = @p0;
+SELECT changes();
+2021-02-04 17:44:32.953 +04:00 [INF] Executed action method playground.Controllers.UserController.DeleteUser (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 38.1834ms.
+2021-02-04 17:44:32.957 +04:00 [INF] Executing ViewResult, running view GetAllUsers.
+2021-02-04 17:44:32.960 +04:00 [ERR] The view 'GetAllUsers' was not found. Searched locations: ["/Views/User/GetAllUsers.cshtml","/Views/Shared/GetAllUsers.cshtml"]
+2021-02-04 17:44:32.969 +04:00 [INF] Executed action playground.Controllers.UserController.DeleteUser (playground) in 101.7268ms
+2021-02-04 17:44:32.972 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.DeleteUser (playground)'
+2021-02-04 17:44:32.975 +04:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'GetAllUsers' was not found. The following locations were searched:
+/Views/User/GetAllUsers.cshtml
+/Views/Shared/GetAllUsers.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|21_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-02-04 17:44:33.007 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/DeleteUser?userId=14 - - - 500 - text/html;+charset=utf-8 204.1763ms
+2021-02-04 17:44:38.879 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/Register - -
+2021-02-04 17:44:38.882 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:44:38.883 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Register (playground)'
+2021-02-04 17:44:38.886 +04:00 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller playground.Controllers.UserController (playground).
+2021-02-04 17:44:38.922 +04:00 [INF] Executing action method playground.Controllers.UserController.Register (playground) - Validation state: "Valid"
+2021-02-04 17:44:38.927 +04:00 [INF] Executed action method playground.Controllers.UserController.Register (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0205ms.
+2021-02-04 17:44:38.930 +04:00 [INF] Executing ViewResult, running view Register.
+2021-02-04 17:44:38.933 +04:00 [INF] Executed ViewResult - view Register executed in 3.571ms.
+2021-02-04 17:44:38.936 +04:00 [INF] Executed action playground.Controllers.UserController.Register (playground) in 44.6067ms
+2021-02-04 17:44:38.938 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Register (playground)'
+2021-02-04 17:44:38.941 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/Register - - - 200 - text/html;+charset=utf-8 62.4672ms
+2021-02-04 17:44:41.316 +04:00 [INF] Request starting HTTP/2 POST https://localhost:5001/User/Register application/x-www-form-urlencoded 301
+2021-02-04 17:44:41.319 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:44:41.321 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Register (playground)'
+2021-02-04 17:44:41.324 +04:00 [INF] Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[playground.DTOs.UserWithTokenDto]] Register(playground.DTOs.UserToRegisterDto) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:44:41.371 +04:00 [INF] Executing action method playground.Controllers.UserController.Register (playground) - Validation state: "Valid"
+2021-02-04 17:44:41.376 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:44:41.381 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__ToLower_0='?' (Size = 14)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Users" AS "u"
+    WHERE "u"."Email" = @__ToLower_0)
+2021-02-04 17:44:41.390 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?' (Size = 14), @p2='?' (Size = 7), @p3='?', @p4='?' (Size = 7), @p5='?', @p6='?', @p7='?' (Size = 64), @p8='?' (Size = 128)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("CreatedUTC", "Email", "FirstName", "LastLoginUTC", "LastName", "LastUpdatedUTC", "LoginsCount", "PasswordHash", "PasswordSalt")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+SELECT "id"
+FROM "Users"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2021-02-04 17:44:41.402 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Roles" ("EUserId", "Role")
+VALUES (@p0, @p1);
+SELECT "Id"
+FROM "Roles"
+WHERE changes() = 1 AND "rowid" = last_insert_rowid();
+2021-02-04 17:44:41.413 +04:00 [INF] Executed action method playground.Controllers.UserController.Register (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 37.7072ms.
+2021-02-04 17:44:41.416 +04:00 [INF] Executing ViewResult, running view UserCreatedSuccesfully.
+2021-02-04 17:44:41.420 +04:00 [INF] Executed ViewResult - view UserCreatedSuccesfully executed in 3.8356ms.
+2021-02-04 17:44:41.425 +04:00 [INF] Executed action playground.Controllers.UserController.Register (playground) in 93.8629ms
+2021-02-04 17:44:41.438 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Register (playground)'
+2021-02-04 17:44:41.441 +04:00 [INF] Request finished HTTP/2 POST https://localhost:5001/User/Register application/x-www-form-urlencoded 301 - 200 - text/html;+charset=utf-8 124.7258ms
+2021-02-04 17:45:48.387 +04:00 [INF] User profile is available. Using 'C:\Users\mtoka\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-02-04 17:45:49.050 +04:00 [INF] Now listening on: https://localhost:5001
+2021-02-04 17:45:49.052 +04:00 [INF] Now listening on: http://localhost:5000
+2021-02-04 17:45:49.054 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-04 17:45:49.056 +04:00 [INF] Hosting environment: Development
+2021-02-04 17:45:49.057 +04:00 [INF] Content root path: C:\git\pg\playground
+2021-02-04 17:45:51.484 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/ - -
+2021-02-04 17:45:51.635 +04:00 [INF] Executing endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-04 17:45:51.699 +04:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller playground.Controllers.HomeController (playground).
+2021-02-04 17:45:52.054 +04:00 [INF] Executing action method playground.Controllers.HomeController.Index (playground) - Validation state: "Valid"
+2021-02-04 17:45:52.065 +04:00 [INF] Executed action method playground.Controllers.HomeController.Index (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.7167ms.
+2021-02-04 17:45:52.096 +04:00 [INF] Executing ViewResult, running view Index.
+2021-02-04 17:45:52.232 +04:00 [INF] Executed ViewResult - view Index executed in 150.7701ms.
+2021-02-04 17:45:52.236 +04:00 [INF] Executed action playground.Controllers.HomeController.Index (playground) in 530.314ms
+2021-02-04 17:45:52.239 +04:00 [INF] Executed endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-04 17:45:52.246 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 765.7938ms
+2021-02-04 17:45:58.794 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/Login - -
+2021-02-04 17:45:58.818 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:45:58.859 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(Int32) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:45:58.911 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-04 17:45:58.914 +04:00 [INF] Executed action method playground.Controllers.UserController.Login (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.559ms.
+2021-02-04 17:45:58.918 +04:00 [INF] Executing ViewResult, running view Login.
+2021-02-04 17:45:58.969 +04:00 [INF] Executed ViewResult - view Login executed in 52.0884ms.
+2021-02-04 17:45:58.984 +04:00 [INF] Executed action playground.Controllers.UserController.Login (playground) in 120.8134ms
+2021-02-04 17:45:58.987 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:45:58.990 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/Login - - - 200 - text/html;+charset=utf-8 195.8729ms
+2021-02-04 17:46:00.141 +04:00 [INF] Request starting HTTP/2 POST https://localhost:5001/User/Login application/x-www-form-urlencoded 224
+2021-02-04 17:46:00.151 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:46:00.169 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[playground.Entities.EUser]] Login(playground.DTOs.UserToLoginDto) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:46:00.230 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-04 17:46:01.101 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:46:01.585 +04:00 [INF] Executed DbCommand (23ms) [Parameters=[@__email_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 2
+2021-02-04 17:46:01.794 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@p2='?', @p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "LastLoginUTC" = @p0, "LoginsCount" = @p1
+WHERE "id" = @p2;
+SELECT changes();
+2021-02-04 17:46:01.846 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "r"."Id", "r"."EUserId", "r"."Role"
+FROM "Roles" AS "r"
+WHERE "r"."EUserId" = @__userId_0
+2021-02-04 17:46:02.077 +04:00 [INF] Executed action method playground.Controllers.UserController.Login (playground), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 1842.0365ms.
+2021-02-04 17:46:02.083 +04:00 [INF] Executing RedirectResult, redirecting to /User/%2Fuser%2FgetAllUsers.
+2021-02-04 17:46:02.086 +04:00 [INF] Executed action playground.Controllers.UserController.Login (playground) in 1913.2604ms
+2021-02-04 17:46:02.088 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:46:02.094 +04:00 [INF] Request finished HTTP/2 POST https://localhost:5001/User/Login application/x-www-form-urlencoded 224 - 302 0 - 1953.4294ms
+2021-02-04 17:46:03.416 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/%2Fuser%2FgetAllUsers - -
+2021-02-04 17:46:03.572 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:46:03.579 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/%2Fuser%2FgetAllUsers - - - 404 0 - 162.1721ms
+2021-02-04 17:46:56.246 +04:00 [INF] User profile is available. Using 'C:\Users\mtoka\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-02-04 17:46:56.913 +04:00 [INF] Now listening on: https://localhost:5001
+2021-02-04 17:46:56.917 +04:00 [INF] Now listening on: http://localhost:5000
+2021-02-04 17:46:56.921 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-02-04 17:46:56.924 +04:00 [INF] Hosting environment: Development
+2021-02-04 17:46:56.928 +04:00 [INF] Content root path: C:\git\pg\playground
+2021-02-04 17:46:59.542 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/ - -
+2021-02-04 17:46:59.696 +04:00 [INF] Executing endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-04 17:46:59.749 +04:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller playground.Controllers.HomeController (playground).
+2021-02-04 17:47:00.003 +04:00 [INF] Executing action method playground.Controllers.HomeController.Index (playground) - Validation state: "Valid"
+2021-02-04 17:47:00.023 +04:00 [INF] Executed action method playground.Controllers.HomeController.Index (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.1951ms.
+2021-02-04 17:47:00.088 +04:00 [INF] Executing ViewResult, running view Index.
+2021-02-04 17:47:00.290 +04:00 [INF] Executed ViewResult - view Index executed in 223.4519ms.
+2021-02-04 17:47:00.296 +04:00 [INF] Executed action playground.Controllers.HomeController.Index (playground) in 539.8167ms
+2021-02-04 17:47:00.299 +04:00 [INF] Executed endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-04 17:47:00.310 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 770.6917ms
+2021-02-04 17:48:30.583 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/Login - -
+2021-02-04 17:48:30.591 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:48:30.630 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(Int32) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:48:30.679 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-04 17:48:30.684 +04:00 [INF] Executed action method playground.Controllers.UserController.Login (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.529ms.
+2021-02-04 17:48:30.694 +04:00 [INF] Executing ViewResult, running view Login.
+2021-02-04 17:48:30.747 +04:00 [INF] Executed ViewResult - view Login executed in 56.2552ms.
+2021-02-04 17:48:30.772 +04:00 [INF] Executed action playground.Controllers.UserController.Login (playground) in 135.9319ms
+2021-02-04 17:48:30.775 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:48:30.781 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/Login - - - 200 - text/html;+charset=utf-8 198.2541ms
+2021-02-04 17:48:35.294 +04:00 [INF] Request starting HTTP/2 POST https://localhost:5001/User/Login application/x-www-form-urlencoded 224
+2021-02-04 17:48:35.317 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:48:35.373 +04:00 [INF] Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[playground.Entities.EUser]] Login(playground.DTOs.UserToLoginDto) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:48:35.498 +04:00 [INF] Executing action method playground.Controllers.UserController.Login (playground) - Validation state: "Valid"
+2021-02-04 17:48:37.027 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:48:37.912 +04:00 [INF] Executed DbCommand (64ms) [Parameters=[@__email_0='?' (Size = 15)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 2
+2021-02-04 17:48:38.367 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@p2='?', @p0='?', @p1='?'], CommandType='"Text"', CommandTimeout='30']
+UPDATE "Users" SET "LastLoginUTC" = @p0, "LoginsCount" = @p1
+WHERE "id" = @p2;
+SELECT changes();
+2021-02-04 17:48:38.465 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "r"."Id", "r"."EUserId", "r"."Role"
+FROM "Roles" AS "r"
+WHERE "r"."EUserId" = @__userId_0
+2021-02-04 17:48:38.819 +04:00 [INF] Executed action method playground.Controllers.UserController.Login (playground), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 3317.217ms.
+2021-02-04 17:48:38.834 +04:00 [INF] Executing RedirectResult, redirecting to /user/getAllUsers.
+2021-02-04 17:48:38.837 +04:00 [INF] Executed action playground.Controllers.UserController.Login (playground) in 3451.5009ms
+2021-02-04 17:48:38.847 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.Login (playground)'
+2021-02-04 17:48:38.870 +04:00 [INF] Request finished HTTP/2 POST https://localhost:5001/User/Login application/x-www-form-urlencoded 224 - 302 0 - 3575.7961ms
+2021-02-04 17:48:38.908 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/user/getAllUsers - -
+2021-02-04 17:48:39.035 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:48:39.051 +04:00 [INF] Authorization was successful.
+2021-02-04 17:48:39.056 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.GetAllUsers (playground)'
+2021-02-04 17:48:39.074 +04:00 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[playground.Entities.EUser]]] GetAllUsers() on controller playground.Controllers.UserController (playground).
+2021-02-04 17:48:39.156 +04:00 [INF] Executing action method playground.Controllers.UserController.GetAllUsers (playground) - Validation state: "Valid"
+2021-02-04 17:48:39.222 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:48:39.243 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+2021-02-04 17:48:39.261 +04:00 [INF] Executed action method playground.Controllers.UserController.GetAllUsers (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 97.3733ms.
+2021-02-04 17:48:39.269 +04:00 [INF] Executing ViewResult, running view User.
+2021-02-04 17:48:39.291 +04:00 [INF] Executed ViewResult - view User executed in 24.0865ms.
+2021-02-04 17:48:39.295 +04:00 [INF] Executed action playground.Controllers.UserController.GetAllUsers (playground) in 210.5516ms
+2021-02-04 17:48:39.307 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.GetAllUsers (playground)'
+2021-02-04 17:48:39.316 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/user/getAllUsers - - - 200 - text/html;+charset=utf-8 408.4432ms
+2021-02-04 17:48:42.692 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/DeleteUser?userId=15 - -
+2021-02-04 17:48:42.698 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:48:42.712 +04:00 [INF] Authorization was successful.
+2021-02-04 17:48:42.721 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.DeleteUser (playground)'
+2021-02-04 17:48:42.741 +04:00 [INF] Route matched with {action = "DeleteUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteUser(Int32) on controller playground.Controllers.UserController (playground).
+2021-02-04 17:48:42.821 +04:00 [INF] Executing action method playground.Controllers.UserController.DeleteUser (playground) - Validation state: "Valid"
+2021-02-04 17:48:42.863 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:48:42.895 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+WHERE "u"."id" = @__id_0
+LIMIT 2
+2021-02-04 17:48:42.960 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?'], CommandType='"Text"', CommandTimeout='30']
+DELETE FROM "Users"
+WHERE "id" = @p0;
+SELECT changes();
+2021-02-04 17:48:43.031 +04:00 [INF] Executed action method playground.Controllers.UserController.DeleteUser (playground), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 205.022ms.
+2021-02-04 17:48:43.038 +04:00 [INF] Executing RedirectResult, redirecting to /User/GetAllUsers.
+2021-02-04 17:48:43.040 +04:00 [INF] Executed action playground.Controllers.UserController.DeleteUser (playground) in 286.1894ms
+2021-02-04 17:48:43.042 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.DeleteUser (playground)'
+2021-02-04 17:48:43.045 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/DeleteUser?userId=15 - - - 302 0 - 353.3536ms
+2021-02-04 17:48:46.008 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/User/GetAllUsers - -
+2021-02-04 17:48:46.015 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:48:46.030 +04:00 [INF] Authorization was successful.
+2021-02-04 17:48:46.033 +04:00 [INF] Executing endpoint 'playground.Controllers.UserController.GetAllUsers (playground)'
+2021-02-04 17:48:46.040 +04:00 [INF] Route matched with {action = "GetAllUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[playground.Entities.EUser]]] GetAllUsers() on controller playground.Controllers.UserController (playground).
+2021-02-04 17:48:46.106 +04:00 [INF] Executing action method playground.Controllers.UserController.GetAllUsers (playground) - Validation state: "Valid"
+2021-02-04 17:48:46.112 +04:00 [INF] Entity Framework Core 5.0.2 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite' with options: None
+2021-02-04 17:48:46.127 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."id", "u"."CreatedUTC", "u"."Email", "u"."FirstName", "u"."LastLoginUTC", "u"."LastName", "u"."LastUpdatedUTC", "u"."LoginsCount", "u"."PasswordHash", "u"."PasswordSalt"
+FROM "Users" AS "u"
+2021-02-04 17:48:46.142 +04:00 [INF] Executed action method playground.Controllers.UserController.GetAllUsers (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 30.6842ms.
+2021-02-04 17:48:46.150 +04:00 [INF] Executing ViewResult, running view User.
+2021-02-04 17:48:46.157 +04:00 [INF] Executed ViewResult - view User executed in 7.3486ms.
+2021-02-04 17:48:46.165 +04:00 [INF] Executed action playground.Controllers.UserController.GetAllUsers (playground) in 109.5119ms
+2021-02-04 17:48:46.181 +04:00 [INF] Executed endpoint 'playground.Controllers.UserController.GetAllUsers (playground)'
+2021-02-04 17:48:46.187 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/User/GetAllUsers - - - 200 - text/html;+charset=utf-8 179.1099ms
+2021-02-04 17:49:51.944 +04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/ - -
+2021-02-04 17:49:51.987 +04:00 [INF] Successfully validated the token.
+2021-02-04 17:49:51.990 +04:00 [INF] Executing endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-04 17:49:51.994 +04:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller playground.Controllers.HomeController (playground).
+2021-02-04 17:49:52.036 +04:00 [INF] Executing action method playground.Controllers.HomeController.Index (playground) - Validation state: "Valid"
+2021-02-04 17:49:52.041 +04:00 [INF] Executed action method playground.Controllers.HomeController.Index (playground), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0274ms.
+2021-02-04 17:49:52.048 +04:00 [INF] Executing ViewResult, running view Index.
+2021-02-04 17:49:52.075 +04:00 [INF] Executed ViewResult - view Index executed in 26.8248ms.
+2021-02-04 17:49:52.080 +04:00 [INF] Executed action playground.Controllers.HomeController.Index (playground) in 72.7021ms
+2021-02-04 17:49:52.095 +04:00 [INF] Executed endpoint 'playground.Controllers.HomeController.Index (playground)'
+2021-02-04 17:49:52.101 +04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/ - - - 200 - text/html;+charset=utf-8 157.1015ms

@@ -14,6 +14,12 @@ namespace playground.Interfaces
         /// <param name="data"></param>
         public void SetCookies(IDictionary<string, string> data, CookieOptions cookieOptions, HttpResponse response);
 
+        /// <summary>
+        /// Reads user name from cookie
+        /// </summary>
+        /// <param name="cookieKeyName"></param>
+        /// <param name="request"></param>
+        /// <returns>Returns string username</returns>
         public string GetUserName(string cookieKeyName, HttpRequest request);
     }
 }

@@ -18,7 +18,9 @@
 
    2.7 [Communication with end user](#Communication-with-end-user)
 
-   2.8 [Email configuration](Email)
+   2.8 [Email configuration](#Email)
+
+   2.9 [Forgot password](#Forgot-password)
 
 3. [Logging](#Logging)
 
@@ -99,7 +101,7 @@ Shared \_Layout.cshtml has a modal window that hidden. If `ViewData["modalMessag
 
 ##### Email
 
-Email notification configured thru SendGrid where you need to have an account in provider and generate an API key. Then `appsettings.json` has to be updated with following directive:
+This project use SendGrid as email provider. If you want to use same implementation you need to register account _(you can create for free)_. In your SendGrid dashboard you need to generate an API key and then update `appsettings.json` with following directive:
 
 ```
   "SendGrid": {
@@ -109,12 +111,49 @@ Email notification configured thru SendGrid where you need to have an account in
   }
 ```
 
-How to create an API key: https://sendgrid.com/docs/ui/account-and-settings/api-keys/#creating-an-api-key
+How to create a SendGrid API key: https://sendgrid.com/docs/ui/account-and-settings/api-keys/#creating-an-api-key
+
+##### Forgot Password
+
+User might reset password in case it was forgotten. From login form user has to click on "Forgot password" link and enter email.
+What happens when user submit form:
+
+- Service `ActionKeyService.cs` will generate a key (if user exist in database) and store it in the `UserActionKeys` table
+- Service `SendGridService.cs` will send a mail to the user
+- User open address from e-mail that contain key
+- App will check if key exist and check associated user
+- User enters a new password and submit forms
+- Form contain new password, _email and key (hidden html elements)_ goes to the appropriate controller action
+- Controller verifies request and change password
 
 ### Logging
 
 `Serilog` package is used to log events both to the console and file. Log file will be created daily in `./Log` folder with prefix `log{Date}.txt`. By default 31 files will be retained.
-Configuration could be found in `appsettings.json`
+Configuration could be found in `appsettings.json`.
+
+Default configuration:
+
+```
+"Serilog": {
+    "MinimumLevel": "Debug",
+    "WriteTo": [
+      {
+        "Name": "Console",
+        "Args": {
+          "restrictedToMinimumLevel": "Information"
+        }
+      },
+      {
+        "Name": "File",
+        "Args": {
+          "path": "./logs/log.txt",
+          "restrictedToMinimumLevel": "Information",
+          "RollingInterval": "Day"
+        }
+      }
+    ]
+  }
+```
 
 ### Bottom line
 
