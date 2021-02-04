@@ -30,7 +30,9 @@ namespace playground.Services
             // Checking if user exist
             if (await CheckUserExistAync(userToRegister.Email))
             {
-                return InitResult(0, null, true, $"User with email '{userToRegister.Email}' already exist.");
+                string messageFailed = $"User with email '{userToRegister.Email}'";
+                _logger.LogWarning(messageFailed);
+                return InitResult(0, null, true, messageFailed);
             }
 
             // Adding crypto service to generate salt and use hashing
@@ -61,7 +63,10 @@ namespace playground.Services
             await _dbcontext.Roles.AddAsync(userRole);
             await _dbcontext.SaveChangesAsync();
 
-            return InitResult(user.id, null, false, $"User '{userToRegister.Email}' has been registered.");
+            string messageSeccess = $"User '{userToRegister.Email}' has been registered.";
+            _logger.LogInformation(messageSeccess);
+
+            return InitResult(user.id, null, false, messageSeccess);
         }
 
         public async Task<IEnumerable<EUser>> GetAllUsersAsync()
@@ -87,7 +92,10 @@ namespace playground.Services
             // This action will break on Failure and return task result with Status: Faulted
             var result = await _dbcontext.SaveChangesAsync();
 
-            return InitResult(id, null, false, $"User '{userToRemove.Email}' has been removed. '{result}' row affected.");
+            string messageSuccess = $"User '{userToRemove.Email}' has been removed. '{result}' row affected.";
+            _logger.LogInformation(messageSuccess);
+
+            return InitResult(id, null, false, messageSuccess);
         }
 
         public async Task<EUser> GetUserByIdAsync(int id)
@@ -105,10 +113,23 @@ namespace playground.Services
             var user = await GetUserByEmailAsync(userToLogin.Email);
             UserActionResult result;
 
+            if (String.IsNullOrEmpty(userToLogin.Email) || String.IsNullOrEmpty(userToLogin.Password))
+            {
+                string messageFailed = $"Email and password must not be empty.";
+                _logger.LogWarning(messageFailed);
+                
+                result = InitResult(0, null, true, messageFailed);
+
+                return result;
+            }
+
             // if username not found
             if (user == null)
             {
-                result = InitResult(0, null, true, $"Login failed for '{userToLogin.Email}'. Username or password incorrect.");
+                string messageFailed = $"Login failed for '{userToLogin.Email}'. Username or password incorrect.";
+                _logger.LogWarning(messageFailed);
+
+                result = InitResult(0, null, true, messageFailed);
 
                 return result;
             }
@@ -120,6 +141,9 @@ namespace playground.Services
             {
                 if (user.PasswordHash[i] != computedHash[i])
                 {
+                    string messageFailed = $"Login failed for '{userToLogin.Email}'. Username or password incorrect.";
+                    _logger.LogWarning(messageFailed);
+
                     result = InitResult(0, null, true, $"Login failed for '{userToLogin.Email}'. Username or password incorrect.");
 
                     return result;
@@ -134,7 +158,10 @@ namespace playground.Services
             // Get user roles
             var userRoles = await GetUserRolesAsync(user.id);
 
-            result = InitResult(user.id, userRoles, false, $"User '{userToLogin.Email}' has been succesfully logged in.");
+            string messageSuccess = $"User '{userToLogin.Email}' has been succesfully logged in.";
+            _logger.LogInformation(messageSuccess);
+
+            result = InitResult(user.id, userRoles, false, messageSuccess);
 
             return result;
         }
@@ -162,8 +189,9 @@ namespace playground.Services
 
             if (user == null)
             {
-                _logger.LogWarning($"Unable reset password for user '{email}'. User not found.");
-                result = InitResult(0, null, true, $"Unable to find user with email '{email}'.");
+                string messageFailed = $"Unable to find user with email '{email}'.";
+                _logger.LogWarning(messageFailed);
+                result = InitResult(0, null, true, messageFailed);
 
                 return result;
             }
@@ -178,15 +206,18 @@ namespace playground.Services
 
             if (dbresult == 0)
             {
-                _logger.LogWarning($"Unable reset password for user '{email}'. Database error.");
-                result = InitResult(0, null, true, $"Unable to save new password to database for user: '{email}'.");
+                string messageFailed = $"Unable to save new password to database for user: '{email}'.";
+                _logger.LogWarning(messageFailed);
+
+                result = InitResult(0, null, true, messageFailed);
 
                 return result;
             }
 
-            _logger.LogInformation($"Password for user: '{user.Email}' has been update.");
+            string messageSuccess = $"Password for user: '{user.Email}' has been update.";
+            _logger.LogInformation(messageSuccess);
 
-            return InitResult(user.id, user.Roles, false, $"Password for '{user.Email}' has been updated.");
+            return InitResult(user.id, user.Roles, false, messageSuccess);
         }
     }
 }
