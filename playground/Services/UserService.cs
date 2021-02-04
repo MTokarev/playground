@@ -160,7 +160,7 @@ namespace playground.Services
             UserActionResult result;
             var user = await GetUserByEmailAsync(email);
 
-            if(user == null)
+            if (user == null)
             {
                 _logger.LogWarning($"Unable reset password for user '{email}'. User not found.");
                 result = InitResult(0, null, true, $"Unable to find user with email '{email}'.");
@@ -176,7 +176,7 @@ namespace playground.Services
 
             var dbresult = await _dbcontext.SaveChangesAsync();
 
-            if(dbresult == 0)
+            if (dbresult == 0)
             {
                 _logger.LogWarning($"Unable reset password for user '{email}'. Database error.");
                 result = InitResult(0, null, true, $"Unable to save new password to database for user: '{email}'.");

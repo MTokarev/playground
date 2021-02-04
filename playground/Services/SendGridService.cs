@@ -41,7 +41,7 @@ namespace playground.Services
             var mailFrom = new EmailAddress(_options.Value.SenderEmail, _options.Value.SenderName);
 
             var client = new SendGridClient(_options.Value.ApiKey);
-            
+
             var mail = new SendGridMessage
             {
                 From = mailFrom,
@@ -51,19 +51,19 @@ namespace playground.Services
             };
 
             mail.AddTos(sendTo.Select(x => new EmailAddress { Email = x }).ToList());
-            
-            if(ccTo != null)
+
+            if (ccTo != null)
             {
                 mail.AddCcs(ccTo.Select(x => new EmailAddress { Email = x }).ToList());
             }
 
-            if(bccTo != null)
+            if (bccTo != null)
             {
                 mail.AddBccs(bccTo.Select(x => new EmailAddress { Email = x }).ToList());
             }
 
             var result = await client.SendEmailAsync(mail);
-            
+
             string logString = $@"
                     Sent From: '{mailFrom.Email}'
                     Message Subject: '{subject}'.
@@ -74,7 +74,8 @@ namespace playground.Services
             if (result.StatusCode != HttpStatusCode.Accepted)
             {
                 _logger.LogError($"Unable to send email. Status code '{result.StatusCode}'. {logString}");
-            } else if(result.StatusCode == HttpStatusCode.Accepted)
+            }
+            else if (result.StatusCode == HttpStatusCode.Accepted)
             {
                 _logger.LogInformation($"Mail has been submitted. {logString}");
             }

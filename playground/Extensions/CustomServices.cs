@@ -70,7 +70,7 @@ namespace playground.Extensions
             {
                 options.UseSqlite(config.GetConnectionString("DefaultConnection"));
             });
-            
+
             // Adding User Service
             services.AddScoped<IUserService, UserService>();
 

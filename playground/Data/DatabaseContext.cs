@@ -11,7 +11,7 @@ namespace playground.Data
 
         public DbSet<EUser> Users { get; set; }
         public DbSet<ERole> Roles { get; set; }
-        public DbSet<EUserActionKey> UserActionKeys{ get; set; }
+        public DbSet<EUserActionKey> UserActionKeys { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -22,7 +22,7 @@ namespace playground.Data
                 .WithMany(r => r.Roles)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Cascade);
-            
+
             // Each user might have action key associated. This could help execute task without passwords.
             // For example password reset. This required to clean all assigned keys in case user removed.
             modelBuilder.Entity<EUserActionKey>()

@@ -6,7 +6,6 @@ using playground.Interfaces;
 using playground.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,11 +31,11 @@ namespace playground.Services
         {
             var user = await _userService.GetUserByEmailAsync(email);
 
-            if(user == null)
+            if (user == null)
             {
                 string messageFailed = $"Unable to find user with email: '{email}'.";
                 _logger.LogWarning(messageFailed);
-                
+
                 return InitResult(0, true, messageFailed, Guid.Empty);
             }
 
@@ -44,13 +43,14 @@ namespace playground.Services
             {
                 ActionKey = Guid.NewGuid(),
                 EUser = user,
-                UserId = user.id
+                UserId = user.id,
+                CreatedUTC = DateTime.UtcNow
             };
 
             await _dbcontext.UserActionKeys.AddAsync(newActionKey);
             int rowAffected = await _dbcontext.SaveChangesAsync();
 
-            if(rowAffected == 0)
+            if (rowAffected == 0)
             {
                 string messageFailed = $"Unable to save key for user with email: '{email}'.";
                 _logger.LogError(messageFailed);
@@ -76,7 +76,7 @@ namespace playground.Services
         public async Task<KeyActionResult> GetKeyAsync(Guid key, bool removeKey = false)
         {
             var keyFromDb = await _dbcontext.UserActionKeys.SingleOrDefaultAsync(k => k.ActionKey == key);
-            if(keyFromDb == null)
+            if (keyFromDb == null)
             {
                 string messageFailed = $"Unable to find key in the databse.";
                 _logger.LogWarning(messageFailed);

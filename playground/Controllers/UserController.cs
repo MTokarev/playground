@@ -73,7 +73,7 @@ namespace playground.Controllers
         public async Task<IActionResult> DeleteUser([FromQuery] int userId)
         {
             await _userService.DeleteUserAsync(userId);
-            return Redirect("GetAllUsers");
+            return View("GetAllUsers");
         }
 
         [HttpGet]
@@ -107,11 +107,11 @@ namespace playground.Controllers
         [HttpGet]
         public async Task<IActionResult> PasswordReset([FromQuery] string key)
         {
-            if(key == null || !Guid.TryParse(key, out var validGuid))
+            if (key == null || !Guid.TryParse(key, out var validGuid))
             {
                 TempData["modalMessage"] = "Invalid key provided. Try reset password again.";
 
-                return Redirect("/error/showError");
+                return RedirectToAction("showError", "error");
             }
             var keyFromDbResult = await _keyService.GetKeyAsync(new Guid(key), removeKey: false);
 
@@ -119,15 +119,15 @@ namespace playground.Controllers
             {
                 TempData["modalMessage"] = keyFromDbResult.Message;
 
-                return Redirect("/error/showError");
+                return RedirectToAction("showError", "error");
             }
             var user = await _userService.GetUserByIdAsync(keyFromDbResult.UserId);
 
-            if(user == null)
+            if (user == null)
             {
                 TempData["modalMessage"] = $"Unable to find user with id: '{keyFromDbResult.UserId}'";
 
-                return Redirect("/error/showError");
+                return RedirectToAction("showError", "error");
             }
 
             // Setting email and key, it would be passed to the POST to do a second validation.
@@ -144,27 +144,29 @@ namespace playground.Controllers
             {
                 TempData["modalMessage"] = "Invalid key provided. Try reset password again.";
 
-                return Redirect("/error/showError");
+                return RedirectToAction("showError", "error");
             }
-            var keyFromDbResult = await _keyService.GetKeyAsync(new Guid(passwordResetDto.Key), removeKey: false);
+            var keyFromDbResult = await _keyService.GetKeyAsync(new Guid(passwordResetDto.Key), removeKey: true);
 
             if (keyFromDbResult.HasError)
             {
                 TempData["modalMessage"] = keyFromDbResult.Message;
 
-                return Redirect("/error/showError");
+                return RedirectToAction("showError", "error");
             }
 
             var result = await _userService.PasswordReset(passwordResetDto.Email, passwordResetDto.NewPassword);
 
-            if(result.HasError)
+            if (result.HasError)
             {
                 TempData["modalMessage"] = result.Message;
 
-                return Redirect("/error/showError");
+                return RedirectToAction("showError", "error");
             }
 
-            return Redirect("/user/login");
+            ViewData["modalMessage"] = result.Message;
+
+            return View("login");
         }
 
         [HttpPost]
@@ -176,12 +178,12 @@ namespace playground.Controllers
             {
                 TempData["modalMessage"] = $"ERROR: {newKeyResult.Message}";
 
-                return Redirect("/error/showError");
+                return RedirectToAction("showError", "error");
             }
 
             ViewData["modalMessage"] = "Please check your email for password reset link.";
 
-            return Redirect("/home/index");
+            return View("login");
         }
 
 
