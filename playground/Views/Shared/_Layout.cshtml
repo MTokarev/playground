@@ -3,8 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Playground
+    <title>
+        Playground
     </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet" />
 </head>
@@ -29,23 +31,29 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p id="modalMessage">@{if (ViewData["modalMessage"] != null){ <text>@ViewData["modalMessage"]</text>;}}</p>
-        </div>
-
+            <p id="modalMessage">
+                @{if (ViewData["modalMessage"] != null)
+                    { <text>@ViewData["modalMessage"]</text>;
+                }}
+        </p>
     </div>
 
+</div>
+
+<div>
+    <main role="main">
+        @RenderBody()
+    </main>
+</div>
+
+<footer>
     <div>
-        <main role="main">
-            @RenderBody()
-        </main>
+        &copy;  @DateTime.Now.Year - playground - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
     </div>
-
-    <footer>
-        <div>
-            &copy;  @DateTime.Now.Year - playground - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+</footer>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
