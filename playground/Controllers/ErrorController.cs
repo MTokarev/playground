@@ -1,22 +1,35 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
-namespace playground.Controllers
+namespace imakler.Controllers
 {
     public class ErrorController : Controller
     {
+        private readonly ILogger<ErrorController> _logger;
+
+        public ErrorController(ILogger<ErrorController> logger)
+        {
+            _logger = logger;
+        }
+
+
         [HttpGet]
         public IActionResult ShowError([FromQuery] int errorCode)
         {
             // If request came with status code then add error
             if (errorCode == 401)
             {
-                ViewData["modalMessage"] = "ERROR: Unauthorized access";
+                string messageFailed = "ERROR: Unauthorized access";
+                ViewData["modalMessage"] = messageFailed;
+                _logger.LogError(messageFailed);
 
                 return View();
             }
             else if (errorCode == 403)
             {
-                ViewData["modalMessage"] = "ERROR: User role is not enough to perform this operation";
+                string messageFailed = "ERROR: User role is not enough to perform this operation";
+                ViewData["modalMessage"] = messageFailed;
+                _logger.LogError(messageFailed);
 
                 return View();
             }
@@ -25,6 +38,7 @@ namespace playground.Controllers
             if (TempData.TryGetValue("modalMessage", out var modalMessage))
             {
                 ViewData["modalMessage"] = modalMessage;
+                _logger.LogError(modalMessage.ToString());
             }
 
             return View();
